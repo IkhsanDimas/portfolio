@@ -63,7 +63,7 @@ const ContactSection = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Ganti dengan Access Key dari Web3Forms
+          access_key: "4698293d-4688-4b07-ae0d-18273a1cf89d",
           name: formData.name,
           email: formData.email,
           message: formData.message,
