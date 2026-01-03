@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,6 +30,7 @@ const itemVariants: Variants = {
 
 const ContactSection = () => {
   const { t } = useLanguage();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,10 +52,38 @@ const ContactSection = () => {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t("contact.success"));
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY_HERE", // Ganti dengan Access Key dari Web3Forms
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Pesan Portfolio dari ${formData.name}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success(t("contact.success"));
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Gagal mengirim pesan. Silakan coba lagi.");
+      }
+    } catch (error) {
+      toast.error("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -127,6 +156,7 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-secondary border-border"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -141,6 +171,7 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-secondary border-border"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -155,16 +186,27 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="bg-secondary border-border resize-none"
                     required
+                    disabled={isLoading}
                   />
                 </div>
               </div>
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect font-display"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                disabled={isLoading}
               >
-                <Send className="w-5 h-5 mr-2" />
-                {t("contact.send")}
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    Mengirim...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    {t("contact.send")}
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>
