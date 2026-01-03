@@ -36,7 +36,7 @@ const Navbar = () => {
             onClick={scrollToTop}
             className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
-            Ikhsan Dimastianto
+            Portofolio
           </button>
 
           {/* Desktop Navigation */}
