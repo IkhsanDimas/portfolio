@@ -12,8 +12,7 @@ const CTASection = () => {
   };
 
   const handleWhatsApp = () => {
-    // Ganti dengan nomor WhatsApp Anda
-    window.open("https://wa.me/6281234567890?text=Halo%20Ikhsan!", "_blank");
+    window.open("https://wa.me/6283165359785?text=Halo%20Ikhsan!%20Saya%20tertarik%20dengan%20portfolio%20Anda.", "_blank");
   };
 
   const socialLinks = [
