@@ -122,20 +122,30 @@ const ContactSection = () => {
               </p>
 
               <div className="space-y-4">
-                {contactInfo.map((item) => (
-                  <a
+                {contactInfo.map((item, index) => (
+                  <motion.a
                     key={item.label}
                     href={item.href}
                     className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary/70 transition-colors"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    whileTap={{ scale: 0.98 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <motion.div 
+                      className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <item.icon className="w-5 h-5 text-primary" />
-                    </div>
+                    </motion.div>
                     <div>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
                       <p className="font-medium">{item.value}</p>
                     </div>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
