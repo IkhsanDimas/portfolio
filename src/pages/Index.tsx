@@ -33,6 +33,8 @@ const Index = () => {
                   alt="Ikhsan Dimastianto"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 25%' }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>

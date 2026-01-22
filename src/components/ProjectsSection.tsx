@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github as GithubIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -59,6 +59,8 @@ export const projects: Project[] = [
       "Deployed on Netlify - Hosting cepat dan reliable",
     ],
     image: projectOtaku,
+    liveUrl: "https://otaku-asah-otak.netlify.app",
+    githubUrl: "https://github.com/IkhsanDimas/otaku-asah-otak",
   },
 ];
 
@@ -130,6 +132,7 @@ const ProjectsSection = () => {
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.4 }}
                 />
@@ -150,7 +153,7 @@ const ProjectsSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, index) => (
+                  {project.tags.map((tag) => (
                     <motion.span
                       key={tag}
                       className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
@@ -173,7 +176,7 @@ const ProjectsSection = () => {
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                       <Button variant="outline" className="w-full">
-                        <Github className="w-4 h-4 mr-2" />
+                        <GithubIcon className="w-4 h-4 mr-2" />
                         GitHub
                       </Button>
                     </a>
