@@ -60,7 +60,6 @@ export const projects: Project[] = [
     ],
     image: projectOtaku,
     liveUrl: "https://otaku-asah-otak.netlify.app",
-    githubUrl: "https://github.com/IkhsanDimas/otaku-asah-otak",
   },
 ];
 
