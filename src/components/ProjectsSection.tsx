@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import projectChatbot from "@/assets/project-chatbot.jpeg";
+import projectOtaku from "@/assets/project-otaku.png";
 
 export interface Project {
   id: string;
@@ -38,6 +39,26 @@ export const projects: Project[] = [
     ],
     image: projectChatbot,
     liveUrl: "https://nega-chatbot.vercel.app",
+  },
+  {
+    id: "otaku-asah-otak",
+    title: "Otaku Asah Otak",
+    description: "Game puzzle asah otak berbasis web dengan 20+ level yang menantang logika dan kreativitas pemain. Setiap level memiliki tipe gameplay yang berbeda seperti pertanyaan jebakan, teka-teki visual, drag & drop, tap objek, dan input teks.",
+    fullDescription: "Otaku Asah Otak adalah game puzzle berbasis web yang dirancang untuk mengasah kemampuan berpikir logis dan kreativitas. Dengan lebih dari 20 level yang menantang, game ini menawarkan berbagai tipe gameplay mulai dari pertanyaan jebakan, teka-teki visual, drag & drop, tap objek, hingga input teks. Game ini dilengkapi dengan sistem penyimpanan progres otomatis menggunakan LocalStorage, sistem rating bintang untuk setiap level, dan fitur hint untuk membantu pemain menyelesaikan level yang sulit. Dibangun sebagai Progressive Web App (PWA), game ini dapat diinstal di perangkat dan dimainkan secara offline.",
+    tags: ["React", "Vite", "Tailwind CSS", "JavaScript", "PWA"],
+    features: [
+      "20+ Level Puzzle - Berbagai tipe teka-teki yang menantang logika dan kreativitas",
+      "Gameplay Beragam - Pertanyaan jebakan, teka-teki visual, drag & drop, tap objek, dan input teks",
+      "Auto Save Progress - Progres game tersimpan otomatis menggunakan LocalStorage",
+      "Star Rating System - Sistem penilaian bintang untuk setiap level yang diselesaikan",
+      "Hint System - Fitur bantuan untuk level yang sulit",
+      "Visual Effects - Efek konfeti menggunakan React Confetti untuk perayaan kemenangan",
+      "Responsive Design - Tampilan optimal di berbagai ukuran layar dengan Tailwind CSS",
+      "Progressive Web App - Dapat diinstal di perangkat dan dimainkan offline",
+      "Icon Library - Menggunakan React Icons untuk UI yang menarik",
+      "Deployed on Netlify - Hosting cepat dan reliable",
+    ],
+    image: projectOtaku,
   },
 ];
 
