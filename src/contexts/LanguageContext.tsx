@@ -19,9 +19,14 @@ export const translations: Translations = {
 
   // Hero
   "hero.greeting": { id: "Halo, Saya", en: "Hi, I'm" },
-  "hero.status": { id: "Terbuka untuk Kesempatan Baru", en: "Open for New Opportunities" },
-  "hero.description": { id: "Mengubah ide menjadi kode. Menciptakan pengalaman digital yang berkesan.", en: "Turning ideas into code. Creating memorable digital experiences." },
-  "hero.viewProjects": { id: "Lihat Proyek Saya", en: "View My Projects" },
+  "hero.name": { id: "Ikhsan Dimastianto", en: "Ikhsan Dimastianto" },
+  "hero.status": { id: "Siap Berkolaborasi & Berkontribusi", en: "Ready to Collaborate & Contribute" },
+  "hero.student": { id: "Mahasiswa", en: "Student of" },
+  "hero.major": { id: "Teknik Informatika", en: "Informatics Engineering" },
+  "hero.description": { id: "yang passionate dalam membangun solusi digital kreatif dan aplikasi web yang memberikan dampak positif.", en: "passionate about building creative digital solutions and impactful web applications." },
+  "hero.tagline": { id: "Mengubah ide menjadi kode, dan kode menjadi pengalaman yang bermakna", en: "Turning ideas into code, and code into meaningful experiences" },
+  "hero.location": { id: "Indonesia", en: "Indonesia" },
+  "hero.viewProjects": { id: "Jelajahi Karya Saya", en: "Explore My Work" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
 
   // About

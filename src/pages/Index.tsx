@@ -9,8 +9,11 @@ import profilePhoto from "@/assets/Profil-photo.jpeg";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Background Effects */}
@@ -65,7 +68,7 @@ const Index = () => {
             >
               <Sparkles className="w-4 h-4 text-primary" />
             </motion.div>
-            <span className="text-sm font-medium text-foreground/80">Siap Berkolaborasi & Berkontribusi</span>
+            <span className="text-sm font-medium text-foreground/80">{t("hero.status")}</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -81,7 +84,7 @@ const Index = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Halo, Saya
+              {t("hero.greeting")}
             </motion.span>
             <motion.span 
               className="bg-gradient-to-r from-primary via-cyan-400 to-accent bg-clip-text text-transparent"
@@ -89,7 +92,7 @@ const Index = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              Ikhsan Dimastianto
+              {t("hero.name")}
             </motion.span>
           </motion.h1>
           
@@ -100,8 +103,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            Mahasiswa <span className="text-foreground font-medium">Teknik Informatika</span> yang passionate 
-            dalam membangun solusi digital kreatif dan aplikasi web yang memberikan dampak positif.
+            {t("hero.student")} <span className="text-foreground font-medium">{t("hero.major")}</span> {t("hero.description")}
           </motion.p>
 
           {/* Tagline */}
@@ -111,7 +113,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            "Mengubah ide menjadi kode, dan kode menjadi pengalaman yang bermakna"
+            "{t("hero.tagline")}"
           </motion.p>
 
           {/* Location */}
@@ -128,7 +130,7 @@ const Index = () => {
             >
               <MapPin className="w-4 h-4 text-primary" />
             </motion.div>
-            <span>Indonesia</span>
+            <span>{t("hero.location")}</span>
           </motion.div>
 
           {/* CTA Buttons */}
@@ -147,7 +149,7 @@ const Index = () => {
                 className="bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Jelajahi Karya Saya
+                {t("hero.viewProjects")}
                 <motion.div
                   animate={{ y: [0, 3, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -167,7 +169,7 @@ const Index = () => {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Mail className="mr-2 h-4 w-4" />
-                Hubungi Saya
+                {t("hero.contactMe")}
               </Button>
             </motion.div>
           </motion.div>
