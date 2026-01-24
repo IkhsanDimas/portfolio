@@ -4,7 +4,7 @@ import { Download, MessageCircle, Github, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CTASection = () => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   const handleDownloadCV = () => {
     // Link ke CV Anda (bisa Google Drive atau file lokal)
@@ -51,7 +51,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            {language === "id" ? "Mari Bekerja Sama!" : "Let's Work Together!"}
+            {t("cta.title")}
           </motion.h2>
           
           <motion.p
@@ -61,9 +61,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {language === "id"
-              ? "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Mari diskusikan ide Anda!"
-              : "I'm open to freelance opportunities, internships, or project collaborations. Let's discuss your ideas!"}
+            {t("cta.description")}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -84,7 +82,7 @@ const CTASection = () => {
                 className="bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               >
                 <Download className="w-5 h-5 mr-2" />
-                {language === "id" ? "Download CV" : "Download Resume"}
+                {t("cta.downloadCV")}
               </Button>
             </motion.div>
 
@@ -99,7 +97,7 @@ const CTASection = () => {
                 className="border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                {language === "id" ? "Chat via WhatsApp" : "Chat on WhatsApp"}
+                {t("cta.chatWhatsApp")}
               </Button>
             </motion.div>
           </motion.div>
@@ -113,7 +111,7 @@ const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <span className="text-sm text-muted-foreground">
-              {language === "id" ? "Atau hubungi saya di:" : "Or connect with me on:"}
+              {t("cta.connectOn")}
             </span>
             {socialLinks.map((social, index) => (
               <motion.a

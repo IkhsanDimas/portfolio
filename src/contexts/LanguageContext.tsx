@@ -72,6 +72,13 @@ export const translations: Translations = {
   "contact.messagePlaceholder": { id: "Tuliskan pesan Anda...", en: "Write your message..." },
   "contact.send": { id: "Kirim Pesan", en: "Send Message" },
   "contact.success": { id: "Pesan terkirim! Saya akan segera menghubungi Anda.", en: "Message sent! I'll get back to you soon." },
+
+  // CTA Section
+  "cta.title": { id: "Mari Bekerja Sama!", en: "Let's Work Together!" },
+  "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Mari diskusikan ide Anda!", en: "I'm open to freelance opportunities, internships, or project collaborations. Let's discuss your ideas!" },
+  "cta.downloadCV": { id: "Download CV", en: "Download Resume" },
+  "cta.chatWhatsApp": { id: "Chat via WhatsApp", en: "Chat on WhatsApp" },
+  "cta.connectOn": { id: "Atau hubungi saya di:", en: "Or connect with me on:" },
 };
 
 interface LanguageContextType {
