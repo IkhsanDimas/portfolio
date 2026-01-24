@@ -24,9 +24,9 @@ export const translations: Translations = {
   "hero.student": { id: "Mahasiswa", en: "Student of" },
   "hero.major": { id: "Teknik Informatika", en: "Informatics Engineering" },
   "hero.description": { id: "yang passionate dalam membangun solusi digital kreatif dan aplikasi web yang memberikan dampak positif.", en: "passionate about building creative digital solutions and impactful web applications." },
-  "hero.tagline": { id: "Mengubah ide menjadi kode, dan kode menjadi pengalaman yang bermakna", en: "Turning ideas into code, and code into meaningful experiences" },
+  "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
   "hero.location": { id: "Indonesia", en: "Indonesia" },
-  "hero.viewProjects": { id: "Jelajahi Karya Saya", en: "Explore My Work" },
+  "hero.viewProjects": { id: "Lihat Proyek Saya", en: "View My Projects" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
 
   // About
@@ -74,8 +74,8 @@ export const translations: Translations = {
   "contact.success": { id: "Pesan terkirim! Saya akan segera menghubungi Anda.", en: "Message sent! I'll get back to you soon." },
 
   // CTA Section
-  "cta.title": { id: "Mari Bekerja Sama!", en: "Let's Work Together!" },
-  "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Mari diskusikan ide Anda!", en: "I'm open to freelance opportunities, internships, or project collaborations. Let's discuss your ideas!" },
+  "cta.title": { id: "Tertarik Bekerja Sama?", en: "Interested to Work Together?" },
+  "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Yuk diskusikan ide kamu!", en: "I'm open to freelance opportunities, internships, or project collaborations. Let's discuss your ideas!" },
   "cta.downloadCV": { id: "Download CV", en: "Download Resume" },
   "cta.chatWhatsApp": { id: "Chat via WhatsApp", en: "Chat on WhatsApp" },
   "cta.connectOn": { id: "Atau hubungi saya di:", en: "Or connect with me on:" },
