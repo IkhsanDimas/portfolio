@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle } from "lucide-react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/components/ProjectsSection";
+import OptimizedImage from "@/components/OptimizedImage";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -68,11 +69,12 @@ const ProjectDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img 
-              src={project.image} 
+            <OptimizedImage
+              src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
+              className="w-full h-full"
+              loading="eager"
+              priority
             />
           </motion.div>
 

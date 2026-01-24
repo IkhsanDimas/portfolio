@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import profilePhoto from "@/assets/Profil-photo.jpeg";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, MapPin, Sparkles } from "lucide-react";
@@ -191,6 +192,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <BackToTop />
     </div>
   );
 };

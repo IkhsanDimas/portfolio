@@ -1,8 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, ExternalLink, Github as GithubIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import OptimizedImage from "@/components/OptimizedImage";
 import projectChatbot from "@/assets/project-chatbot.jpeg";
 import projectOtaku from "@/assets/project-otaku.png";
 
@@ -127,13 +143,11 @@ const ProjectsSection = () => {
             >
               {/* Project image */}
               <div className="h-48 relative overflow-hidden">
-                <motion.img 
-                  src={project.image} 
+                <OptimizedImage
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
                   loading="lazy"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.4 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent group-hover:from-background/60 transition-colors duration-300" />
                 <motion.div 
