@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, ExternalLink, Github as GithubIcon } from "lucide-react";
@@ -115,11 +100,10 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
       duration: 0.5,
     },
@@ -130,7 +114,6 @@ const ProjectsSection = () => {
   const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Auto-slide for featured project images
   const featuredProject = projects[0];
   const featuredImages = featuredProject?.images || [featuredProject?.image];
 
@@ -143,42 +126,46 @@ const ProjectsSection = () => {
   }, [featuredImages.length]);
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative mesh-gradient-1">
       <div className="container px-4 md:px-6">
+        {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">Portfolio</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
             {t("projects.title")} <span className="gradient-text">{t("projects.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             {t("projects.description")}
           </p>
         </motion.div>
 
         <motion.div
-          className="space-y-6"
+          className="space-y-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Featured project (first) - full width */}
-          {projects.slice(0, 1).map((project) => (
+          {projects.slice(0, 1).map((project, index) => (
             <motion.div
               key={project.id}
-              className="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              className="glass-card-elevated rounded-2xl overflow-hidden group hover:border-primary/30 transition-all duration-500"
               variants={cardVariants}
               whileHover={{
-                y: -8,
-                scale: 1.01,
-                boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.3)"
+                y: -6,
+                boxShadow: "0 25px 50px -12px hsl(var(--primary) / 0.15)"
               }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
               <div className="grid md:grid-cols-2">
                 {/* Project image - left side */}
@@ -200,15 +187,17 @@ const ProjectsSection = () => {
                       />
                     </motion.div>
                   </AnimatePresence>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/40 hidden md:block" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/50 hidden md:block" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:hidden" />
-                  <motion.div
-                    className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"
-                  />
-                  {/* Featured badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold backdrop-blur-sm">
-                    Featured Project
+
+                  {/* Project number + Featured badge */}
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <span className="text-5xl font-bold text-white/10 font-mono select-none">01</span>
                   </div>
+                  <div className="absolute top-4 right-4 md:right-auto md:left-20 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-white text-xs font-semibold shadow-lg">
+                    Featured
+                  </div>
+
                   {/* Image navigation dots */}
                   {featuredImages.length > 1 && (
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -216,11 +205,10 @@ const ProjectsSection = () => {
                         <button
                           key={idx}
                           onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
-                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                            idx === currentImageIndex
-                              ? "bg-primary scale-125 shadow-lg shadow-primary/50"
-                              : "bg-white/50 hover:bg-white/80"
-                          }`}
+                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === currentImageIndex
+                              ? "bg-white scale-125 shadow-lg"
+                              : "bg-white/40 hover:bg-white/70"
+                            }`}
                         />
                       ))}
                     </div>
@@ -236,25 +224,24 @@ const ProjectsSection = () => {
                     Dashboard Kriminalitas Terpadu — Kejaksaan Tinggi Kepulauan Riau
                   </p>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 pt-2">
                     {project.tags.map((tag) => (
-                      <motion.span
+                      <span
                         key={tag}
-                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
-                        whileHover={{ scale: 1.1 }}
+                        className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/10 font-medium"
                       >
                         {tag}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
 
                   <div className="flex gap-2 mt-4">
                     <Link to={`/project/${project.id}`} className="flex-1">
-                      <Button className="w-full bg-primary hover:bg-primary/90">
+                      <Button className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white rounded-xl">
                         <ArrowRight className="w-4 h-4 mr-2" />
                         {t("projects.viewDetail")}
                       </Button>
@@ -267,17 +254,16 @@ const ProjectsSection = () => {
 
           {/* Other projects - 2 column grid */}
           <div className="grid md:grid-cols-2 gap-6">
-            {projects.slice(1).map((project) => (
+            {projects.slice(1).map((project, index) => (
               <motion.div
                 key={project.id}
-                className="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                className="glass-card-elevated rounded-2xl overflow-hidden group hover:border-primary/30 transition-all duration-500"
                 variants={cardVariants}
                 whileHover={{
-                  y: -8,
-                  scale: 1.02,
-                  boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.3)"
+                  y: -6,
+                  boxShadow: "0 25px 50px -12px hsl(var(--primary) / 0.15)"
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
                 {/* Project image */}
                 <div className="h-48 relative overflow-hidden">
@@ -287,10 +273,14 @@ const ProjectsSection = () => {
                     className="w-full h-full"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent group-hover:from-background/60 transition-colors duration-300" />
-                  <motion.div
-                    className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+
+                  {/* Project number */}
+                  <div className="absolute top-4 left-4">
+                    <span className="text-4xl font-bold text-white/10 font-mono select-none">
+                      {String(index + 2).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Project content */}
@@ -299,26 +289,25 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  <div className="flex flex-wrap gap-2 pt-1">
                     {project.tags.map((tag) => (
-                      <motion.span
+                      <span
                         key={tag}
-                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
-                        whileHover={{ scale: 1.1 }}
+                        className="px-2.5 py-0.5 text-xs rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/10 font-medium"
                       >
                         {tag}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
 
                   <div className="flex gap-2 mt-4">
                     {project.liveUrl && (
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button className="w-full bg-primary hover:bg-primary/90">
+                        <Button className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white rounded-xl text-sm">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           {t("projects.liveDemo")}
                         </Button>
@@ -326,7 +315,7 @@ const ProjectsSection = () => {
                     )}
                     {project.githubUrl && (
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button variant="outline" className="w-full">
+                        <Button variant="outline" className="w-full rounded-xl text-sm">
                           <GithubIcon className="w-4 h-4 mr-2" />
                           GitHub
                         </Button>
@@ -337,16 +326,10 @@ const ProjectsSection = () => {
                   <Link to={`/project/${project.id}`}>
                     <Button
                       variant="ghost"
-                      className="w-full mt-2 group/btn hover:bg-primary/10"
+                      className="w-full mt-2 group/btn hover:bg-primary/5 rounded-xl"
                     >
                       {t("projects.viewDetail")}
-                      <motion.span
-                        className="ml-2"
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 4 }}
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </div>

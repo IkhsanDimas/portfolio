@@ -43,12 +43,16 @@ const ContactSection = () => {
       label: t("contact.email"),
       value: "ikhsandimastianto@gmail.com",
       href: "mailto:ikhsandimastianto@gmail.com",
+      color: "from-blue-500/10 to-cyan-500/10",
+      iconColor: "text-blue-500",
     },
     {
       icon: MapPin,
       label: t("contact.location"),
       value: "Indonesia",
       href: "#",
+      color: "from-purple-500/10 to-pink-500/10",
+      iconColor: "text-purple-500",
     },
   ];
 
@@ -87,25 +91,30 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-secondary/30">
+    <section id="contact" className="py-24 relative mesh-gradient-2">
       <div className="container px-4 md:px-6">
+        {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">Contact</span>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
             {t("contact.title")} <span className="gradient-text">{t("contact.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             {t("contact.description")}
           </p>
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto"
+          className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -113,37 +122,33 @@ const ContactSection = () => {
         >
           {/* Contact info */}
           <motion.div className="space-y-6" variants={itemVariants}>
-            <div className="glass-card p-6 rounded-2xl space-y-6">
+            <div className="glass-card-elevated p-8 rounded-2xl space-y-6">
               <h3 className="font-display text-xl font-semibold">
                 {t("contact.connect")}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {t("contact.connectDesc")}
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {contactInfo.map((item, index) => (
                   <motion.a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary/70 transition-colors"
-                    whileHover={{ scale: 1.02, x: 5 }}
+                    className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${item.color} border border-border/50 hover:border-primary/30 transition-all duration-300`}
+                    whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.98 }}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <motion.div 
-                      className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </motion.div>
+                    <div className="w-11 h-11 rounded-xl bg-background/80 flex items-center justify-center shadow-sm">
+                      <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                    </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-medium">{item.value}</p>
+                      <p className="text-xs text-muted-foreground">{item.label}</p>
+                      <p className="font-medium text-sm">{item.value}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -153,10 +158,10 @@ const ContactSection = () => {
 
           {/* Contact form */}
           <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="glass-card p-6 rounded-2xl space-y-6">
+            <form onSubmit={handleSubmit} className="glass-card-elevated p-8 rounded-2xl space-y-5">
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="text-sm font-medium mb-2 block">
+                  <label htmlFor="name" className="text-sm font-medium mb-2 block text-muted-foreground">
                     {t("contact.name")}
                   </label>
                   <Input
@@ -164,13 +169,13 @@ const ContactSection = () => {
                     placeholder={t("contact.namePlaceholder")}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-secondary border-border"
+                    className="bg-background/50 border-border/50 focus:border-primary/50 rounded-xl h-11 transition-colors"
                     required
                     disabled={isLoading}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="text-sm font-medium mb-2 block">
+                  <label htmlFor="email" className="text-sm font-medium mb-2 block text-muted-foreground">
                     {t("contact.email")}
                   </label>
                   <Input
@@ -179,13 +184,13 @@ const ContactSection = () => {
                     placeholder={t("contact.emailPlaceholder")}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-secondary border-border"
+                    className="bg-background/50 border-border/50 focus:border-primary/50 rounded-xl h-11 transition-colors"
                     required
                     disabled={isLoading}
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="text-sm font-medium mb-2 block">
+                  <label htmlFor="message" className="text-sm font-medium mb-2 block text-muted-foreground">
                     {t("contact.message")}
                   </label>
                   <Textarea
@@ -194,7 +199,7 @@ const ContactSection = () => {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-secondary border-border resize-none"
+                    className="bg-background/50 border-border/50 focus:border-primary/50 rounded-xl resize-none transition-colors"
                     required
                     disabled={isLoading}
                   />
@@ -203,7 +208,7 @@ const ContactSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white rounded-xl h-12 font-semibold transition-all duration-300"
                 disabled={isLoading}
               >
                 {isLoading ? (
