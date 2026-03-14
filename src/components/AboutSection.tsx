@@ -1,4 +1,4 @@
-import { Code2, Palette, Database, Lightbulb, TrendingUp, Award, Coffee } from "lucide-react";
+import { Code2, Palette, Database, Lightbulb, TrendingUp, Award } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -31,7 +31,6 @@ const AboutSection = () => {
   const stats = [
     { value: 3, suffix: "+", label: "Projects Built", icon: Award },
     { value: 6, suffix: "+", label: "Technologies", icon: TrendingUp },
-    { value: 500, suffix: "+", label: "Cups of Coffee", icon: Coffee },
   ];
 
   const skills = [
@@ -85,7 +84,7 @@ const AboutSection = () => {
 
         {/* Stats Counter Row */}
         <motion.div
-          className="grid grid-cols-3 gap-4 md:gap-8 mb-20"
+          className="grid grid-cols-2 gap-4 md:gap-8 mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

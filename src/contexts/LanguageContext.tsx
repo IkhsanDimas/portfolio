@@ -94,6 +94,8 @@ export const translations: Translations = {
   "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
   "experience.photoCaption2": { id: "Demo Sistem kepada Tim Kejaksaan", en: "System Demo to Prosecution Team" },
   "experience.clickToZoom": { id: "Klik untuk perbesar", en: "Click to zoom" },
+  "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },
+  "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
 };
 
 interface LanguageContextType {
