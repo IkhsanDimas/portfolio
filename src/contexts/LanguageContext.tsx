@@ -79,6 +79,21 @@ export const translations: Translations = {
   "cta.downloadCV": { id: "Download CV", en: "Download Resume" },
   "cta.chatWhatsApp": { id: "Chat via WhatsApp", en: "Chat on WhatsApp" },
   "cta.connectOn": { id: "Atau hubungi saya di:", en: "Or connect with me on:" },
+
+  // Experience
+  "experience.label": { id: "Pengalaman", en: "Experience" },
+  "experience.title": { id: "Pengalaman", en: "Internship" },
+  "experience.subtitle": { id: "Magang", en: "Experience" },
+  "experience.description": { id: "Pengalaman kerja praktik yang membentuk kemampuan teknis dan profesionalisme saya di dunia nyata", en: "Real-world internship experience that shaped my technical skills and professionalism" },
+  "experience.p1": { id: "Selama 2 bulan menjalani Kerja Praktik di Kejaksaan Tinggi Kepulauan Riau, saya berkontribusi membangun sistem DASKRIMTI — Dashboard Kriminalitas Terpadu yang mencakup CMS data perkara, dashboard absensi, dan portal login terpusat.", en: "During my 2-month internship at Kejaksaan Tinggi Kepulauan Riau, I contributed to building DASKRIMTI — an integrated criminal dashboard system including case data CMS, attendance dashboard, and centralized login portal." },
+  "experience.p2": { id: "Saya berkesempatan mempresentasikan hasil projek langsung kepada tim Kejaksaan, menunjukkan fitur-fitur sistem yang telah kami bangun dan implementasikan.", en: "I had the opportunity to present the project results directly to the Prosecution team, demonstrating the system features we built and implemented." },
+  "experience.institution": { id: "Institusi", en: "Institution" },
+  "experience.duration": { id: "Durasi", en: "Duration" },
+  "experience.role": { id: "Posisi", en: "Role" },
+  "experience.certificateTitle": { id: "Sertifikat Magang", en: "Internship Certificate" },
+  "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
+  "experience.photoCaption2": { id: "Demo Sistem kepada Tim Kejaksaan", en: "System Demo to Prosecution Team" },
+  "experience.clickToZoom": { id: "Klik untuk perbesar", en: "Click to zoom" },
 };
 
 interface LanguageContextType {

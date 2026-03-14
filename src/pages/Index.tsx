@@ -1,5 +1,6 @@
-﻿import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
@@ -257,6 +258,8 @@ const Index = () => {
       <main className="relative z-10">
         <div className="section-divider" />
         <AboutSection />
+        <div className="section-divider" />
+        <ExperienceSection />
         <div className="section-divider" />
         <SkillsSection />
         <div className="section-divider" />

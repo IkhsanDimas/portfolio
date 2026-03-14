@@ -284,6 +284,26 @@
     z-index: 100;
     transition: width 0.1s linear;
   }
+
+  /* Certificate golden glow */
+  .certificate-frame {
+    position: relative;
+  }
+
+  @keyframes certificate-glow {
+    0%, 100% {
+      opacity: 0.6;
+      filter: blur(4px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(8px);
+    }
+  }
+
+  .animate-certificate-glow {
+    animation: certificate-glow 3s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
