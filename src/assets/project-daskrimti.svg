@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="200">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="line1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(100,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(200,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(300,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(400,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(500,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(600,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(700,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(800,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(900,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(1000,0)"/>
+    <line x1="0" y1="0" x2="0" y2="675" stroke="#fff" stroke-width="1" transform="translate(1100,0)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,100)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,200)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,300)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,400)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,500)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#fff" stroke-width="1" transform="translate(0,600)"/>
+  </g>
+
+  <!-- Decorative orbs -->
+  <circle cx="150" cy="100" r="120" fill="#3b82f6" opacity="0.05"/>
+  <circle cx="1050" cy="550" r="150" fill="#8b5cf6" opacity="0.05"/>
+  <circle cx="600" cy="337" r="200" fill="#3b82f6" opacity="0.02"/>
+
+  <!-- Sidebar -->
+  <rect x="40" y="80" width="200" height="510" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+
+  <!-- Sidebar logo area -->
+  <rect x="56" y="100" width="168" height="48" rx="8" fill="#0f172a"/>
+  <text x="90" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#3b82f6">DASKRIMTI</text>
+
+  <!-- Sidebar menu items -->
+  <rect x="56" y="170" width="168" height="36" rx="8" fill="#3b82f6" opacity="0.15"/>
+  <rect x="72" y="180" width="16" height="16" rx="3" fill="#3b82f6" opacity="0.6"/>
+  <text x="96" y="193" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6" font-weight="600">Dashboard</text>
+
+  <rect x="72" y="224" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="237" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Pra-Penuntutan</text>
+
+  <rect x="72" y="258" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="271" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Penuntutan</text>
+
+  <rect x="72" y="292" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="305" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Upaya Hukum</text>
+
+  <rect x="72" y="326" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="339" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Eksekusi</text>
+
+  <rect x="72" y="360" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="373" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Barang Bukti</text>
+
+  <!-- Sidebar separator + absensi -->
+  <line x1="56" y1="400" x2="224" y2="400" stroke="#334155" stroke-width="1"/>
+  <rect x="72" y="416" width="16" height="16" rx="3" fill="#64748b" opacity="0.4"/>
+  <text x="96" y="429" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Absensi</text>
+
+  <!-- Main content area -->
+  <!-- Top bar -->
+  <rect x="260" y="80" width="900" height="56" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="284" y="114" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#e2e8f0">Dashboard Kriminalitas Terpadu</text>
+  <text x="1020" y="114" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Kejati Kepri</text>
+
+  <!-- Stats cards row -->
+  <!-- Card 1: Pra-Penuntutan -->
+  <rect x="260" y="156" width="210" height="100" rx="12" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="280" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" font-weight="500">PRA-PENUNTUTAN</text>
+  <text x="280" y="218" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#3b82f6" filter="url(#glow)">1,247</text>
+  <text x="380" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">+12.5%</text>
+  <rect x="280" y="234" width="170" height="4" rx="2" fill="#0f172a"/>
+  <rect x="280" y="234" width="120" height="4" rx="2" fill="#3b82f6"/>
+
+  <!-- Card 2: Penuntutan -->
+  <rect x="490" y="156" width="210" height="100" rx="12" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="510" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" font-weight="500">PENUNTUTAN</text>
+  <text x="510" y="218" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#10b981" filter="url(#glow)">856</text>
+  <text x="582" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">+8.3%</text>
+  <rect x="510" y="234" width="170" height="4" rx="2" fill="#0f172a"/>
+  <rect x="510" y="234" width="100" height="4" rx="2" fill="#10b981"/>
+
+  <!-- Card 3: Eksekusi -->
+  <rect x="720" y="156" width="210" height="100" rx="12" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="740" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" font-weight="500">EKSEKUSI</text>
+  <text x="740" y="218" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#f59e0b" filter="url(#glow)">432</text>
+  <text x="806" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#f59e0b">+5.1%</text>
+  <rect x="740" y="234" width="170" height="4" rx="2" fill="#0f172a"/>
+  <rect x="740" y="234" width="80" height="4" rx="2" fill="#f59e0b"/>
+
+  <!-- Card 4: Barang Bukti -->
+  <rect x="950" y="156" width="210" height="100" rx="12" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="970" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" font-weight="500">BARANG BUKTI</text>
+  <text x="970" y="218" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#8b5cf6" filter="url(#glow)">2,891</text>
+  <text x="1068" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">+15.7%</text>
+  <rect x="970" y="234" width="170" height="4" rx="2" fill="#0f172a"/>
+  <rect x="970" y="234" width="145" height="4" rx="2" fill="#8b5cf6"/>
+
+  <!-- Chart area - Bar chart -->
+  <rect x="260" y="276" width="560" height="310" rx="16" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="284" y="306" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Tren Perkara Pidana Umum</text>
+  <text x="284" y="322" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Data per bulan tahun 2025</text>
+
+  <!-- Bar chart bars -->
+  <g transform="translate(300, 540)">
+    <!-- Jan -->
+    <rect x="0" y="-140" width="24" height="140" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="28" y="-100" width="24" height="100" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="14" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Jan</text>
+
+    <!-- Feb -->
+    <rect x="72" y="-120" width="24" height="120" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="100" y="-90" width="24" height="90" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="86" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Feb</text>
+
+    <!-- Mar -->
+    <rect x="144" y="-160" width="24" height="160" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="172" y="-130" width="24" height="130" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="158" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Mar</text>
+
+    <!-- Apr -->
+    <rect x="216" y="-110" width="24" height="110" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="244" y="-85" width="24" height="85" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="230" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Apr</text>
+
+    <!-- Mei -->
+    <rect x="288" y="-180" width="24" height="180" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="316" y="-150" width="24" height="150" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="302" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Mei</text>
+
+    <!-- Jun -->
+    <rect x="360" y="-130" width="24" height="130" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="388" y="-105" width="24" height="105" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="374" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Jun</text>
+
+    <!-- Jul -->
+    <rect x="432" y="-155" width="24" height="155" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="460" y="-120" width="24" height="120" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <text x="446" y="16" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Jul</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="650" y="297" width="8" height="8" rx="2" fill="#3b82f6"/>
+  <text x="664" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Masuk</text>
+  <rect x="704" y="297" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="718" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Selesai</text>
+
+  <!-- Right side panel - Donut chart -->
+  <rect x="840" y="276" width="320" height="310" rx="16" fill="url(#card)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="864" y="306" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Kehadiran Pegawai</text>
+  <text x="864" y="322" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Rekapitulasi bulanan</text>
+
+  <!-- Donut chart -->
+  <g transform="translate(1000, 430)">
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#1e293b" stroke-width="20"/>
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="320 452" stroke-dashoffset="0" transform="rotate(-90)" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#10b981" stroke-width="20" stroke-dasharray="68 452" stroke-dashoffset="-320" transform="rotate(-90)" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="36 452" stroke-dashoffset="-388" transform="rotate(-90)" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="28 452" stroke-dashoffset="-424" transform="rotate(-90)" stroke-linecap="round"/>
+    <text x="0" y="-8" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#e2e8f0" text-anchor="middle">87.3%</text>
+    <text x="0" y="12" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">WFO</text>
+  </g>
+
+  <!-- Donut legend -->
+  <g transform="translate(864, 340)">
+    <rect x="0" y="0" width="8" height="8" rx="2" fill="#3b82f6"/>
+    <text x="14" y="8" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">WFO (87.3%)</text>
+    <rect x="0" y="18" width="8" height="8" rx="2" fill="#10b981"/>
+    <text x="14" y="26" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Dinas Luar (5.2%)</text>
+    <rect x="0" y="36" width="8" height="8" rx="2" fill="#f59e0b"/>
+    <text x="14" y="44" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Izin/Sakit (4.1%)</text>
+    <rect x="0" y="54" width="8" height="8" rx="2" fill="#ef4444"/>
+    <text x="14" y="62" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Tidak Absen (3.4%)</text>
+  </g>
+</svg>

@@ -21,6 +21,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import OptimizedImage from "@/components/OptimizedImage";
 import projectChatbot from "@/assets/project-chatbot.jpeg";
 import projectOtaku from "@/assets/project-otaku.png";
+import projectDaskrimti from "@/assets/project-daskrimti.svg";
 
 export interface Project {
   id: string;
@@ -35,6 +36,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "daskrimti",
+    title: "DASKRIMTI",
+    description: "Dashboard Kriminalitas Terpadu untuk Kejaksaan Tinggi Kepulauan Riau. Sistem terintegrasi yang mencakup CMS pengelolaan data perkara pidana umum (8 halaman), dashboard absensi pegawai berbasis mobile dengan admin panel untuk upload data Excel, serta portal login terpusat.",
+    fullDescription: "DASKRIMTI (Dashboard Kriminalitas Terpadu) adalah sistem informasi terintegrasi yang dibangun khusus untuk Kejaksaan Tinggi Kepulauan Riau. Sistem ini terdiri dari 3 komponen utama: (1) CMS Dashboard Pidana Umum — mengelola data 8 tahap perkara mulai dari Pra-Penuntutan, Penuntutan, Upaya Hukum, Eksekusi, Barang Bukti, Tindak Pidana Umum, Tindak Pidana Khusus, hingga Perdata & Tata Usaha Negara, dengan fitur grafik interaktif, filter dinamis, dan sinkronisasi data ke Supabase. (2) Dashboard Absensi Mobile — menampilkan data kehadiran 9 bidang kerja dengan visualisasi treemap, bar chart, dan donut chart, dilengkapi Admin Panel yang mampu membaca file Excel secara cerdas (smart parsing) dengan pengenalan alias nama sheet dan deteksi format otomatis. (3) Portal Login Terpusat — sebagai gerbang akses ke seluruh modul. Seluruh data tersinkronisasi secara realtime dengan Supabase sebagai backend.",
+    tags: ["HTML", "CSS", "JavaScript", "Supabase", "Chart.js", "SheetJS"],
+    features: [
+      "CMS 8 Halaman Perkara - Mengelola data Pra-Penuntutan, Penuntutan, Upaya Hukum, Eksekusi, Barang Bukti, dan lainnya",
+      "Grafik Interaktif - Bar chart, line chart, treemap, dan donut chart menggunakan Chart.js",
+      "Smart Excel Parser - Admin panel yang membaca file Excel secara cerdas dengan deteksi format otomatis dan alias nama sheet",
+      "Sinkronisasi Realtime - Data tersimpan dan tersinkronisasi ke Supabase secara otomatis",
+      "Dashboard Absensi 9 Bidang - Visualisasi kehadiran untuk Pembinaan, Intelijen, Pidum, Pidsus, Datun, Pengawasan, TU, Koordinator, dan Pemulihan Aset",
+      "Filter Dinamis - Filter berdasarkan tahun, bulan, dan halaman dengan URL parameter",
+      "Responsive Design - Tampilan optimal di desktop dan mobile untuk dashboard absensi",
+      "Portal Login Terpusat - Satu titik akses ke seluruh modul dashboard",
+      "Manajemen Data Upload - Mode Replace & Append untuk upload data absensi dengan validasi otomatis",
+      "Arsip File Excel - File Excel yang diunggah diarsipkan di Supabase Storage untuk referensi",
+    ],
+    image: projectDaskrimti,
+  },
   {
     id: "nega-chatbot",
     title: "Nega Chatbot AI",
@@ -123,97 +144,171 @@ const ProjectsSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-6"
+          className="space-y-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {projects.map((project) => (
+          {/* Featured project (first) - full width */}
+          {projects.slice(0, 1).map((project) => (
             <motion.div
               key={project.id}
               className="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer"
               variants={cardVariants}
-              whileHover={{ 
-                y: -8, 
-                scale: 1.02,
+              whileHover={{
+                y: -8,
+                scale: 1.01,
                 boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.3)"
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              {/* Project image */}
-              <div className="h-48 relative overflow-hidden">
-                <OptimizedImage
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent group-hover:from-background/60 transition-colors duration-300" />
-                <motion.div 
-                  className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"
-                />
-              </div>
-
-              {/* Project content */}
-              <div className="p-6 space-y-4">
-                <h3 className="font-display text-xl font-semibold group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-
-                <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag) => (
-                    <motion.span
-                      key={tag}
-                      className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
+              <div className="grid md:grid-cols-2">
+                {/* Project image - left side */}
+                <div className="h-64 md:h-full relative overflow-hidden">
+                  <OptimizedImage
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/40 hidden md:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:hidden" />
+                  <motion.div
+                    className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"
+                  />
+                  {/* Featured badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold backdrop-blur-sm">
+                    Featured Project
+                  </div>
                 </div>
 
-                <div className="flex gap-2 mt-4">
-                  {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                {/* Project content - right side */}
+                <div className="p-8 space-y-4 flex flex-col justify-center">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                    Dashboard Kriminalitas Terpadu — Kejaksaan Tinggi Kepulauan Riau
+                  </p>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map((tag) => (
+                      <motion.span
+                        key={tag}
+                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-2 mt-4">
+                    <Link to={`/project/${project.id}`} className="flex-1">
                       <Button className="w-full bg-primary hover:bg-primary/90">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        {t("projects.liveDemo")}
+                        <ArrowRight className="w-4 h-4 mr-2" />
+                        {t("projects.viewDetail")}
                       </Button>
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                      <Button variant="outline" className="w-full">
-                        <GithubIcon className="w-4 h-4 mr-2" />
-                        GitHub
-                      </Button>
-                    </a>
-                  )}
+                    </Link>
+                  </div>
                 </div>
-
-                <Link to={`/project/${project.id}`}>
-                  <Button
-                    variant="ghost"
-                    className="w-full mt-2 group/btn hover:bg-primary/10"
-                  >
-                    {t("projects.viewDetail")}
-                    <motion.span
-                      className="ml-2"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.span>
-                  </Button>
-                </Link>
               </div>
             </motion.div>
           ))}
+
+          {/* Other projects - 2 column grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.slice(1).map((project) => (
+              <motion.div
+                key={project.id}
+                className="glass-card rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                variants={cardVariants}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.3)"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                {/* Project image */}
+                <div className="h-48 relative overflow-hidden">
+                  <OptimizedImage
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent group-hover:from-background/60 transition-colors duration-300" />
+                  <motion.div
+                    className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"
+                  />
+                </div>
+
+                {/* Project content */}
+                <div className="p-6 space-y-4">
+                  <h3 className="font-display text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map((tag) => (
+                      <motion.span
+                        key={tag}
+                        className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-2 mt-4">
+                    {project.liveUrl && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button className="w-full bg-primary hover:bg-primary/90">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          {t("projects.liveDemo")}
+                        </Button>
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button variant="outline" className="w-full">
+                          <GithubIcon className="w-4 h-4 mr-2" />
+                          GitHub
+                        </Button>
+                      </a>
+                    )}
+                  </div>
+
+                  <Link to={`/project/${project.id}`}>
+                    <Button
+                      variant="ghost"
+                      className="w-full mt-2 group/btn hover:bg-primary/10"
+                    >
+                      {t("projects.viewDetail")}
+                      <motion.span
+                        className="ml-2"
+                        initial={{ x: 0 }}
+                        whileHover={{ x: 4 }}
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.span>
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
