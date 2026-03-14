@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/components/ProjectsSection";
@@ -11,6 +12,17 @@ import Footer from "@/components/Footer";
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const projectImages = project?.images || (project ? [project.image] : []);
+
+  useEffect(() => {
+    if (projectImages.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [projectImages.length]);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -20,7 +32,7 @@ const ProjectDetail = () => {
     <div className="min-h-screen bg-background relative">
       <ParallaxBackground />
       <Navbar />
-      
+
       <main className="relative z-10 pt-24 pb-16">
         <div className="container px-4 md:px-6">
           {/* Back button */}
@@ -62,21 +74,67 @@ const ProjectDetail = () => {
             </p>
           </motion.div>
 
-          {/* Project image */}
+          {/* Project images carousel */}
           <motion.div
-            className="glass-card rounded-2xl overflow-hidden mb-12 aspect-video"
+            className="glass-card rounded-2xl overflow-hidden mb-12 aspect-video relative"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <OptimizedImage
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full"
-              loading="eager"
-              priority
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+                className="w-full h-full"
+              >
+                <OptimizedImage
+                  src={projectImages[currentImageIndex]}
+                  alt={`${project.title} - ${currentImageIndex + 1}`}
+                  className="w-full h-full"
+                  loading="eager"
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation arrows */}
+            {projectImages.length > 1 && (
+              <>
+                <button
+                  onClick={() => setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setCurrentImageIndex((prev) => (prev + 1) % projectImages.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </>
+            )}
+
+            {/* Navigation dots */}
+            {projectImages.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {projectImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentImageIndex
+                        ? "bg-primary scale-125 shadow-lg shadow-primary/50"
+                        : "bg-white/50 hover:bg-white/80"
+                      }`}
+                  />
+                ))}
+              </div>
+            )}
           </motion.div>
+
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Features */}

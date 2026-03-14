@@ -13,7 +13,8 @@
 
 
 
-import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, ExternalLink, Github as GithubIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -21,7 +22,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import OptimizedImage from "@/components/OptimizedImage";
 import projectChatbot from "@/assets/project-chatbot.jpeg";
 import projectOtaku from "@/assets/project-otaku.png";
-import projectDaskrimti from "@/assets/project-daskrimti.svg";
+import projectPortal from "@/assets/portal.jpeg";
+import projectPanel from "@/assets/panel.jpeg";
 
 export interface Project {
   id: string;
@@ -31,6 +33,7 @@ export interface Project {
   tags: string[];
   features: string[];
   image: string;
+  images?: string[];
   liveUrl?: string;
   githubUrl?: string;
 }
@@ -54,7 +57,8 @@ export const projects: Project[] = [
       "Manajemen Data Upload - Mode Replace & Append untuk upload data absensi dengan validasi otomatis",
       "Arsip File Excel - File Excel yang diunggah diarsipkan di Supabase Storage untuk referensi",
     ],
-    image: projectDaskrimti,
+    image: projectPortal,
+    images: [projectPortal, projectPanel],
   },
   {
     id: "nega-chatbot",
@@ -124,6 +128,19 @@ const cardVariants: Variants = {
 
 const ProjectsSection = () => {
   const { t } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-slide for featured project images
+  const featuredProject = projects[0];
+  const featuredImages = featuredProject?.images || [featuredProject?.image];
+
+  useEffect(() => {
+    if (featuredImages.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % featuredImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [featuredImages.length]);
 
   return (
     <section id="projects" className="py-24 relative">
@@ -166,12 +183,23 @@ const ProjectsSection = () => {
               <div className="grid md:grid-cols-2">
                 {/* Project image - left side */}
                 <div className="h-64 md:h-full relative overflow-hidden">
-                  <OptimizedImage
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full"
-                    loading="lazy"
-                  />
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                      className="w-full h-full"
+                    >
+                      <OptimizedImage
+                        src={featuredImages[currentImageIndex]}
+                        alt={`${project.title} - ${currentImageIndex + 1}`}
+                        className="w-full h-full"
+                        loading="lazy"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/40 hidden md:block" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:hidden" />
                   <motion.div
@@ -181,6 +209,22 @@ const ProjectsSection = () => {
                   <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold backdrop-blur-sm">
                     Featured Project
                   </div>
+                  {/* Image navigation dots */}
+                  {featuredImages.length > 1 && (
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                      {featuredImages.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                            idx === currentImageIndex
+                              ? "bg-primary scale-125 shadow-lg shadow-primary/50"
+                              : "bg-white/50 hover:bg-white/80"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Project content - right side */}
