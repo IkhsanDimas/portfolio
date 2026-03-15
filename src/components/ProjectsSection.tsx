@@ -126,7 +126,7 @@ const ProjectsSection = () => {
   }, [featuredImages.length]);
 
   return (
-    <section id="projects" className="py-24 relative mesh-gradient-1">
+    <section id="projects" className="py-16 sm:py-20 md:py-24 relative mesh-gradient-1">
       <div className="container px-4 md:px-6">
         {/* Section Header */}
         <motion.div
@@ -140,10 +140,10 @@ const ProjectsSection = () => {
             <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Portfolio</span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             {t("projects.title")} <span className="gradient-text">{t("projects.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
             {t("projects.description")}
           </p>
         </motion.div>
@@ -169,7 +169,7 @@ const ProjectsSection = () => {
             >
               <div className="grid md:grid-cols-2">
                 {/* Project image - left side */}
-                <div className="h-64 md:h-full relative overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-full relative overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentImageIndex}
@@ -216,8 +216,8 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Project content - right side */}
-                <div className="p-8 space-y-4 flex flex-col justify-center">
-                  <h3 className="font-display text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors duration-300">
+                <div className="p-5 sm:p-6 md:p-8 space-y-3 sm:space-y-4 flex flex-col justify-center">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
@@ -284,7 +284,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Project content */}
-                <div className="p-6 space-y-4">
+                <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                   <h3 className="font-display text-xl font-semibold group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>

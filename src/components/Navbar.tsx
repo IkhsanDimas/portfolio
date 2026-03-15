@@ -57,7 +57,7 @@ const Navbar = () => {
         ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-sm"
         : "bg-transparent"
       }`}>
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}

@@ -66,10 +66,10 @@ const ProjectDetail = () => {
                 </span>
               ))}
             </div>
-            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               {project.title}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl">
               {project.fullDescription}
             </p>
           </motion.div>
@@ -105,13 +105,13 @@ const ProjectDetail = () => {
               <>
                 <button
                   onClick={() => setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length)}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setCurrentImageIndex((prev) => (prev + 1) % projectImages.length)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors z-10"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -144,11 +144,11 @@ const ProjectDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="glass-card p-8 rounded-2xl">
+              <div className="glass-card p-5 sm:p-6 md:p-8 rounded-2xl">
                 <h2 className="font-display text-2xl font-semibold mb-6">
                   Fitur Utama
                 </h2>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   {project.features.map((feature, index) => (
                     <motion.div
                       key={feature}

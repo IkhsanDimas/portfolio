@@ -91,7 +91,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative mesh-gradient-2">
+    <section id="contact" className="py-16 sm:py-20 md:py-24 relative mesh-gradient-2">
       <div className="container px-4 md:px-6">
         {/* Section Header */}
         <motion.div
@@ -105,16 +105,16 @@ const ContactSection = () => {
             <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Contact</span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             {t("contact.title")} <span className="gradient-text">{t("contact.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
             {t("contact.description")}
           </p>
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          className="grid lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -122,7 +122,7 @@ const ContactSection = () => {
         >
           {/* Contact info */}
           <motion.div className="space-y-6" variants={itemVariants}>
-            <div className="glass-card-elevated p-8 rounded-2xl space-y-6">
+            <div className="glass-card-elevated p-5 sm:p-6 md:p-8 rounded-2xl space-y-4 sm:space-y-6">
               <h3 className="font-display text-xl font-semibold">
                 {t("contact.connect")}
               </h3>
@@ -158,7 +158,7 @@ const ContactSection = () => {
 
           {/* Contact form */}
           <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="glass-card-elevated p-8 rounded-2xl space-y-5">
+            <form onSubmit={handleSubmit} className="glass-card-elevated p-5 sm:p-6 md:p-8 rounded-2xl space-y-4 sm:space-y-5">
               <div className="space-y-4">
                 <div>
                   <label htmlFor="name" className="text-sm font-medium mb-2 block text-muted-foreground">

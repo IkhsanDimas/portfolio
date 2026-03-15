@@ -64,7 +64,7 @@ const SkillsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="py-24 relative mesh-gradient-2">
+    <section id="skills" className="py-16 sm:py-20 md:py-24 relative mesh-gradient-2">
       <div className="container px-4 md:px-6 max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -78,10 +78,10 @@ const SkillsSection = () => {
             <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Skills</span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             {t("skills.title")} <span className="gradient-text">{t("skills.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
             {t("skills.description")}
           </p>
         </motion.div>
@@ -101,7 +101,7 @@ const SkillsSection = () => {
                 {category.title}
               </h3>
               <motion.div
-                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2.5 sm:gap-3"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"

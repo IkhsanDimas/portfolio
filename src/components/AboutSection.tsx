@@ -65,7 +65,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 mesh-gradient-1 relative">
+    <section id="about" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 mesh-gradient-1 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header - Left aligned */}
         <motion.div
@@ -79,12 +79,12 @@ const AboutSection = () => {
             <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">About</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold">{t("about.title")}</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">{t("about.title")}</h2>
         </motion.div>
 
         {/* Stats Counter Row */}
         <motion.div
-          className="grid grid-cols-2 gap-4 md:gap-8 mb-20"
+          className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-8 mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -93,7 +93,7 @@ const AboutSection = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              className="text-center glass-card-elevated rounded-2xl p-6 md:p-8 group hover:border-primary/30 transition-all duration-300"
+              className="text-center glass-card-elevated rounded-2xl p-4 sm:p-6 md:p-8 group hover:border-primary/30 transition-all duration-300"
               whileHover={{ y: -4 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const AboutSection = () => {
               transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
             >
               <stat.icon className="w-6 h-6 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
@@ -110,7 +110,7 @@ const AboutSection = () => {
         </motion.div>
 
         {/* About Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -30 }}
@@ -118,7 +118,7 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               {t("about.p1")}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -129,11 +129,11 @@ const AboutSection = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className={`p-6 rounded-2xl bg-gradient-to-br ${skill.gradient} border border-border/50 hover:border-primary/30 transition-all duration-300 group`}
+                className={`p-4 sm:p-6 rounded-2xl bg-gradient-to-br ${skill.gradient} border border-border/50 hover:border-primary/30 transition-all duration-300 group`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

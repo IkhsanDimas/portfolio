@@ -27,18 +27,18 @@ const ExperienceSection = () => {
 
   return (
     <>
-      <section id="experience" className="py-28 px-6 relative overflow-hidden">
+      <section id="experience" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 relative overflow-hidden">
         {/* Premium background effects */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/[0.04] blur-[100px]" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-accent/[0.04] blur-[100px]" />
-          <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-amber-500/[0.03] blur-[80px]" />
+          <div className="absolute top-0 left-1/4 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] rounded-full bg-primary/[0.04] blur-[60px] sm:blur-[80px] md:blur-[100px]" />
+          <div className="absolute bottom-0 right-1/4 w-[250px] sm:w-[380px] md:w-[500px] h-[250px] sm:h-[380px] md:h-[500px] rounded-full bg-accent/[0.04] blur-[60px] sm:blur-[80px] md:blur-[100px]" />
+          <div className="absolute top-1/2 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[400px] rounded-full bg-amber-500/[0.03] blur-[50px] sm:blur-[60px] md:blur-[80px]" />
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section Header */}
           <motion.div
-            className="mb-20 text-center"
+            className="mb-12 sm:mb-16 md:mb-20 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -56,18 +56,18 @@ const ExperienceSection = () => {
                 {t("experience.label")}
               </span>
             </motion.div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               {t("experience.title")}{" "}
               <span className="gradient-text">{t("experience.subtitle")}</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+            <p className="text-muted-foreground max-w-xl mx-auto text-sm sm:text-base md:text-lg">
               {t("experience.description")}
             </p>
           </motion.div>
 
           {/* Presentation Photo — Full Width Showcase */}
           <motion.div
-            className="mb-16"
+            className="mb-10 sm:mb-12 md:mb-16"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -86,15 +86,15 @@ const ExperienceSection = () => {
                 />
 
                 {/* Subtle bottom gradient for caption */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-20 pb-6 px-6 md:px-8">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-12 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 md:px-8">
                   <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
                     <div>
-                      <h3 className="text-white font-bold text-lg md:text-xl mb-1">
+                      <h3 className="text-white font-bold text-sm sm:text-lg md:text-xl mb-1">
                         {t("experience.photoCaption1")}
                       </h3>
                       <div className="flex items-center gap-2 text-white/70">
                         <Building2 className="w-3.5 h-3.5" />
-                        <span className="text-sm">Kejaksaan Tinggi Kepulauan Riau</span>
+                        <span className="text-xs sm:text-sm">Kejaksaan Tinggi Kepulauan Riau</span>
                       </div>
                     </div>
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white/80 text-xs font-medium">
@@ -108,7 +108,7 @@ const ExperienceSection = () => {
           </motion.div>
 
           {/* Info Grid — Description + Certificate side by side */}
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
             {/* Left — Description & Institution (3/5) */}
             <motion.div
               className="lg:col-span-3 space-y-6"
@@ -118,7 +118,7 @@ const ExperienceSection = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Glass description card */}
-              <div className="glass-card-elevated rounded-2xl p-6 md:p-8 space-y-4">
+              <div className="glass-card-elevated rounded-2xl p-4 sm:p-6 md:p-8 space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-accent/15 flex items-center justify-center">
                     <Building2 className="w-5 h-5 text-primary" />
@@ -133,7 +133,7 @@ const ExperienceSection = () => {
 
                 <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {t("experience.p1")}
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-sm">
@@ -150,7 +150,7 @@ const ExperienceSection = () => {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="glass-card-elevated rounded-2xl p-5 space-y-4">
+              <div className="glass-card-elevated rounded-2xl p-4 sm:p-5 space-y-3 sm:space-y-4">
                 {/* Certificate header */}
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500/15 to-yellow-500/15 flex items-center justify-center">

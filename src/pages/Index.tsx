@@ -35,20 +35,20 @@ const Index = () => {
 
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-primary/3 blur-[150px]" />
+        <div className="absolute top-0 right-0 w-[350px] sm:w-[500px] md:w-[700px] h-[350px] sm:h-[500px] md:h-[700px] rounded-full bg-primary/5 blur-[80px] sm:blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[400px] md:w-[500px] h-[250px] sm:h-[400px] md:h-[500px] rounded-full bg-accent/5 blur-[80px] sm:blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[900px] h-[400px] sm:h-[600px] md:h-[900px] rounded-full bg-primary/3 blur-[100px] sm:blur-[150px]" />
       </div>
 
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative z-10 px-6 pt-16 overflow-hidden">
+      <section className="min-h-screen flex items-center relative z-10 px-4 sm:px-6 pt-16 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
 
             {/* Left Content */}
-            <div className="order-2 lg:order-1 space-y-6">
+            <div className="order-2 lg:order-1 space-y-4 sm:space-y-6">
               {/* Status Badge */}
               <motion.div
                 className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card-elevated"
@@ -70,7 +70,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <motion.p
-                  className="text-lg md:text-xl text-muted-foreground mb-2"
+                  className="text-base sm:text-lg md:text-xl text-muted-foreground mb-2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
@@ -78,7 +78,7 @@ const Index = () => {
                   {t("hero.greeting")}
                 </motion.p>
                 <motion.h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-4"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
@@ -89,7 +89,7 @@ const Index = () => {
 
               {/* Description */}
               <motion.p
-                className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
+                className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -204,7 +204,7 @@ const Index = () => {
 
               {/* Floating code snippet */}
               <motion.div
-                className="absolute -top-4 -left-8 lg:-left-12 hidden md:block glass-card-elevated rounded-xl px-4 py-3 text-xs font-mono text-muted-foreground"
+                className="absolute -top-4 -left-8 lg:-left-12 hidden lg:block glass-card-elevated rounded-xl px-4 py-3 text-xs font-mono text-muted-foreground"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -212,7 +212,7 @@ const Index = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -right-4 lg:-right-8 hidden md:block glass-card-elevated rounded-xl px-4 py-3 text-xs font-mono text-muted-foreground"
+                className="absolute -bottom-6 -right-4 lg:-right-8 hidden lg:block glass-card-elevated rounded-xl px-4 py-3 text-xs font-mono text-muted-foreground"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
@@ -222,7 +222,7 @@ const Index = () => {
               {/* Photo container */}
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-br from-primary/30 via-accent/20 to-primary/30 rounded-3xl blur-xl opacity-60 animate-pulse-glow"></div>
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden ring-2 ring-white/20 dark:ring-white/10 shadow-2xl">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden ring-2 ring-white/20 dark:ring-white/10 shadow-2xl">
                   <img
                     src={profilePhoto}
                     alt="Ikhsan Dimastianto"

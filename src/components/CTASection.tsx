@@ -28,7 +28,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
       <div className="container px-4 md:px-6 relative z-10">
         <motion.div
           className="max-w-4xl mx-auto relative"
@@ -51,26 +51,26 @@ const CTASection = () => {
 
             {/* Floating decorations */}
             <motion.div
-              className="absolute top-6 right-8 w-20 h-20 rounded-full border border-white/10"
+              className="absolute top-6 right-8 w-20 h-20 rounded-full border border-white/10 hidden sm:block"
               animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute bottom-8 left-12 w-14 h-14 rounded-full border border-white/10"
+              className="absolute bottom-8 left-12 w-14 h-14 rounded-full border border-white/10 hidden sm:block"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             />
             <motion.div
-              className="absolute top-1/2 right-1/4 text-white/5 text-7xl font-bold font-mono select-none"
+              className="absolute top-1/2 right-1/4 text-white/5 text-7xl font-bold font-mono select-none hidden md:block"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
               {'</>'}
             </motion.div>
 
-            <div className="relative p-8 md:p-12 lg:p-16 text-center text-white">
+            <div className="relative p-6 sm:p-8 md:p-12 lg:p-16 text-center text-white">
               <motion.h2
-                className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+                className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -80,7 +80,7 @@ const CTASection = () => {
               </motion.h2>
 
               <motion.p
-                className="text-lg text-white/80 mb-10 max-w-2xl mx-auto"
+                className="text-sm sm:text-base md:text-lg text-white/80 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
