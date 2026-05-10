@@ -13,7 +13,7 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-background px-6">
       <div className="text-center max-w-lg">
         <p className="eyebrow mb-6">Error &mdash; 404</p>
-        <h1 className="display-xl text-[22vw] md:text-[12rem] mb-6 leading-none">404</h1>
+        <h1 className="display-xl text-[clamp(5rem,25vw,12rem)] mb-6 leading-none">404</h1>
         <p className="mb-8 text-lg text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>

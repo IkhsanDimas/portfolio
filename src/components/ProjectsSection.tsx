@@ -134,7 +134,7 @@ const ProjectsSection = () => {
         >
           <div>
             <p className="eyebrow mb-4">(04) &mdash; Selected Work</p>
-            <h2 className="display-lg text-4xl md:text-6xl lg:text-7xl">
+            <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("projects.title")} {t("projects.titleHighlight")}
             </h2>
           </div>

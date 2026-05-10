@@ -70,7 +70,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.05 }}
             >
               <div>
-                <h1 className="display-xl text-[12vw] md:text-[8.2vw] leading-[0.9] mb-6 md:mb-8">
+                <h1 className="display-xl text-[clamp(2.5rem,10vw,7rem)] leading-[0.9] mb-6 md:mb-8">
                   {t("hero.headline1")}
                   <br />
                   {t("hero.headline2")}
@@ -162,9 +162,9 @@ const Index = () => {
       </section>
 
       {/* Marquee ticker */}
-      <div className="border-y border-border py-4 md:py-5 overflow-hidden bg-background">
+      <div className="border-y border-border py-4 md:py-5 overflow-hidden bg-background w-full">
         <div className="marquee">
-          <div className="marquee-track whitespace-nowrap display-lg text-3xl md:text-5xl">
+          <div className="marquee-track whitespace-nowrap display-lg text-2xl md:text-4xl">
             {Array.from({ length: 2 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-8 pr-8">
                 <span>{t("marquee.build")}</span>

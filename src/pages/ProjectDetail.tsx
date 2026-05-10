@@ -56,7 +56,7 @@ const ProjectDetail = () => {
               <p className="eyebrow mb-4">
                 {project.category || "Project"} &middot; {project.year || ""}
               </p>
-              <h1 className="display-lg text-4xl md:text-6xl lg:text-7xl mb-4">
+              <h1 className="display-lg text-[clamp(2rem,7vw,5rem)] mb-4">
                 {project.title}
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">

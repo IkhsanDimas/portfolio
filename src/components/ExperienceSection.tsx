@@ -39,7 +39,7 @@ const ExperienceSection = () => {
           >
             <div className="md:col-span-8">
               <p className="eyebrow mb-4">(02) &mdash; Experience</p>
-              <h2 className="display-lg text-4xl md:text-6xl lg:text-7xl">
+              <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
                 {t("experience.title")} {t("experience.subtitle")}
               </h2>
             </div>

@@ -52,7 +52,7 @@ const CTASection = () => {
 
           {/* Headline */}
           <motion.h2
-            className="relative display-xl text-[12vw] md:text-[6.5rem] lg:text-[8rem] leading-[0.92] mb-8"
+            className="relative display-xl text-[clamp(3rem,10vw,8rem)] leading-[0.92] mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

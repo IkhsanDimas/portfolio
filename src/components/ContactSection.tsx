@@ -80,7 +80,7 @@ const ContactSection = () => {
         >
           <div className="md:col-span-8">
             <p className="eyebrow mb-4">(05) &mdash; Contact</p>
-            <h2 className="display-lg text-4xl md:text-6xl lg:text-7xl">
+            <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("contact.title")} {t("contact.titleHighlight")}
             </h2>
           </div>

@@ -112,6 +112,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -119,6 +120,8 @@
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -135,6 +138,8 @@
     letter-spacing: -0.035em;
     line-height: 0.92;
     text-transform: uppercase;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .display-lg {
@@ -143,6 +148,8 @@
     letter-spacing: -0.025em;
     line-height: 0.95;
     text-transform: uppercase;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .eyebrow {

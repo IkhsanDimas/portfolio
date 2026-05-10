@@ -127,7 +127,7 @@ const Footer = () => {
         </div>
 
         <div
-          className="display-xl text-[18vw] leading-[0.8] border-t border-border pt-8 text-center select-none"
+          className="display-xl text-[clamp(1.5rem,8vw,12rem)] leading-[0.8] border-t border-border pt-8 text-center select-none overflow-hidden"
           style={{ WebkitTextStroke: "1px hsl(var(--foreground))", color: "transparent" }}
           aria-hidden
         >
