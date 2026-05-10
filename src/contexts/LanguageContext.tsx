@@ -1,0 +1,146 @@
+import { createContext, useContext, useState, ReactNode } from "react";
+
+type Language = "id" | "en";
+
+interface Translations {
+  [key: string]: {
+    id: string;
+    en: string;
+  };
+}
+
+export const translations: Translations = {
+  // Navbar
+  "nav.about": { id: "Tentang", en: "About" },
+  "nav.skills": { id: "Keahlian", en: "Skills" },
+  "nav.projects": { id: "Proyek", en: "Projects" },
+  "nav.contact": { id: "Kontak", en: "Contact" },
+  "nav.letsTalk": { id: "Mari Bicara", en: "Let's Talk" },
+
+  // Hero
+  "hero.greeting": { id: "Halo, Saya", en: "Hi, I'm" },
+  "hero.name": { id: "Ikhsan Dimastianto", en: "Ikhsan Dimastianto" },
+  "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
+  "hero.student": { id: "Mahasiswa", en: "Student of" },
+  "hero.major": { id: "Teknik Informatika", en: "Informatics Engineering" },
+  "hero.description": { id: "Mahasiswa Teknik Informatika yang membangun aplikasi web modern dengan React, TypeScript, dan Supabase. Fokus pada solusi yang bersih, terukur, dan memberikan dampak nyata.", en: "An Informatics Engineering student crafting modern web applications with React, TypeScript, and Supabase. Focused on clean, scalable solutions with real impact." },
+  "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
+  "hero.location": { id: "Indonesia", en: "Indonesia" },
+  "hero.basedIn": { id: "Berbasis di", en: "Based in" },
+  "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
+  "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
+  "hero.introEyebrow": { id: "Saya Merancang & Membangun", en: "I Design & Build" },
+  "hero.headline1": { id: "Solusi", en: "Digital" },
+  "hero.headline2": { id: "Digital", en: "Solutions" },
+  "hero.headline3": { id: "Yang Berguna", en: "That Matter" },
+  "hero.role": { id: "Mahasiswa", en: "Student" },
+
+  // Marquee
+  "marquee.build": { id: "Build.", en: "Build." },
+  "marquee.design": { id: "Design.", en: "Design." },
+  "marquee.learn": { id: "Learn.", en: "Learn." },
+  "marquee.collaborate": { id: "Collaborate.", en: "Collaborate." },
+
+  // About
+  "about.title": { id: "Tentang Saya", en: "About Me" },
+  "about.lead": { id: "Sekilas tentang latar belakang, pendekatan, dan hal-hal yang saya kerjakan saat tidak sedang menulis kode.", en: "A glimpse into my background, approach, and what I focus on beyond writing code." },
+  "about.p1": { id: "Saya menulis kode untuk menyelesaikan masalah, bukan sekadar membuat sesuatu bekerja.", en: "I write code to solve problems, not just to make things work." },
+  "about.p2": { id: "Desain yang baik itu tidak terlihat — pengguna hanya merasakan alurnya yang mulus dan tujuannya tercapai.", en: "Good design is invisible — users simply feel the flow and reach their goal." },
+  "about.p3": { id: "Saya tetap curious, selalu belajar teknologi baru, dan percaya konsistensi lebih penting daripada intensitas.", en: "I stay curious, keep learning new technologies, and believe consistency beats intensity." },
+  
+  // About Skills
+  "about.webDev": { id: "Web Development", en: "Web Development" },
+  "about.webDevDesc": { id: "React, TypeScript, dan teknologi modern untuk web yang responsif", en: "React, TypeScript, and modern tech for responsive web" },
+  "about.uiux": { id: "UI/UX Design", en: "UI/UX Design" },
+  "about.uiuxDesc": { id: "Desain intuitif yang mengutamakan kenyamanan pengguna", en: "Intuitive design that prioritizes user comfort" },
+  "about.backend": { id: "Backend Development", en: "Backend Development" },
+  "about.backendDesc": { id: "API dan sistem backend yang cepat dan handal", en: "Fast and reliable API and backend systems" },
+  "about.problemSolving": { id: "Problem Solving", en: "Problem Solving" },
+  "about.problemSolvingDesc": { id: "Solusi kreatif untuk tantangan teknis yang kompleks", en: "Creative solutions for complex technical challenges" },
+
+  // Skills
+  "skills.title": { id: "Keahlian", en: "Skills" },
+  "skills.titleHighlight": { id: "Teknis", en: "Technical" },
+  "skills.description": { id: "Teknologi dan tools yang saya gunakan untuk membangun solusi digital", en: "Technologies and tools I use to build digital solutions" },
+
+  // Projects
+  "projects.title": { id: "Proyek", en: "Selected" },
+  "projects.titleHighlight": { id: "Terbaru", en: "Work" },
+  "projects.description": { id: "Beberapa proyek yang telah saya kerjakan untuk mengasah kemampuan dan kreativitas", en: "A few projects I've built to sharpen my skills and creativity" },
+  "projects.liveDemo": { id: "Live Demo", en: "Live Demo" },
+  "projects.viewDetail": { id: "Lihat Detail", en: "View Detail" },
+  "projects.requestProject": { id: "Punya Proyek?  Ayo Bicara", en: "Have a Project?  Let's Talk" },
+
+  // Contact
+  "contact.title": { id: "Hubungi", en: "Get In" },
+  "contact.titleHighlight": { id: "Saya", en: "Touch" },
+  "contact.description": { id: "Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya.", en: "Interested in collaborating or have questions? Feel free to reach out." },
+  "contact.connect": { id: "Mari Terhubung", en: "Let's Connect" },
+  "contact.connectDesc": { id: "Saya terbuka untuk diskusi proyek baru, magang, atau kolaborasi riset. Pilih kanal yang paling nyaman untuk Anda.", en: "I'm open to new projects, internships, and research collaborations. Pick the channel that's most comfortable for you." },
+  "contact.responseTime": { id: "Biasanya saya membalas dalam 24 jam kerja.", en: "Usually replies within 24 business hours." },
+  "contact.email": { id: "Email", en: "Email" },
+  "contact.location": { id: "Lokasi", en: "Location" },
+  "contact.name": { id: "Nama", en: "Name" },
+  "contact.namePlaceholder": { id: "Nama lengkap Anda", en: "Your full name" },
+  "contact.emailPlaceholder": { id: "email@example.com", en: "email@example.com" },
+  "contact.message": { id: "Pesan", en: "Message" },
+  "contact.messagePlaceholder": { id: "Tuliskan pesan Anda...", en: "Write your message..." },
+  "contact.send": { id: "Kirim Pesan", en: "Send Message" },
+  "contact.success": { id: "Pesan terkirim! Saya akan segera menghubungi Anda.", en: "Message sent! I'll get back to you soon." },
+
+  // CTA Section
+  "cta.eyebrow": { id: "Mari Bekerja Sama", en: "Let's Work Together" },
+  "cta.title": { id: "Tertarik Bekerja Sama?", en: "Interested to Work Together?" },
+  "cta.headline1": { id: "Start Your", en: "Start Your" },
+  "cta.headline2": { id: "Next Project", en: "Next Project" },
+  "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Ceritakan ide Anda, kita diskusikan bersama.", en: "I'm open to freelance opportunities, internships, or project collaborations. Share your idea and let's discuss it together." },
+  "cta.chatWhatsApp": { id: "Chat WhatsApp", en: "Chat on WhatsApp" },
+  "cta.connectOn": { id: "Terhubung di", en: "Connect on" },
+
+  // Experience
+  "experience.label": { id: "Pengalaman", en: "Experience" },
+  "experience.title": { id: "Pengalaman", en: "Internship" },
+  "experience.subtitle": { id: "Magang", en: "Experience" },
+  "experience.description": { id: "Pengalaman kerja praktik yang membentuk kemampuan teknis dan profesionalisme saya di dunia nyata", en: "Real-world internship experience that shaped my technical skills and professionalism" },
+  "experience.p1": { id: "Selama 2 bulan menjalani Kerja Praktik di Kejaksaan Tinggi Kepulauan Riau, saya berkontribusi membangun sistem DASKRIMTI — Dashboard Kriminalitas Terpadu yang mencakup CMS data perkara, dashboard absensi, dan portal login terpusat.", en: "During my 2-month internship at Kejaksaan Tinggi Kepulauan Riau, I contributed to building DASKRIMTI — an integrated criminal dashboard system including case data CMS, attendance dashboard, and centralized login portal." },
+  "experience.p2": { id: "Saya berkesempatan mempresentasikan hasil projek langsung kepada tim Kejaksaan, menunjukkan fitur-fitur sistem yang telah kami bangun dan implementasikan.", en: "I had the opportunity to present the project results directly to the Prosecution team, demonstrating the system features we built and implemented." },
+  "experience.institution": { id: "Institusi", en: "Institution" },
+  "experience.duration": { id: "Durasi", en: "Duration" },
+  "experience.role": { id: "Posisi", en: "Role" },
+  "experience.certificateTitle": { id: "Sertifikat Magang", en: "Internship Certificate" },
+  "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
+  "experience.photoCaption2": { id: "Demo Sistem kepada Tim Kejaksaan", en: "System Demo to Prosecution Team" },
+  "experience.clickToZoom": { id: "Klik untuk perbesar", en: "Click to zoom" },
+  "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },
+  "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
+};
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>("id");
+
+  const t = (key: string): string => {
+    return translations[key]?.[language] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error("useLanguage must be used within a LanguageProvider");
+  }
+  return context;
+};
