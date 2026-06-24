@@ -8,6 +8,7 @@ import projectChatbot from "@/assets/project-chatbot.jpeg";
 import projectOtaku from "@/assets/project-otaku.png";
 import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
+import projectSludge from "@/assets/project-sludge.png";
 
 export interface Project {
   id: string;
@@ -48,6 +49,29 @@ export const projects: Project[] = [
     images: [projectPortal, projectPanel],
     year: "2026",
     category: "Internal Dashboard",
+  },
+  {
+    id: "sludge-monitor",
+    title: "Sludge Monitor",
+    description:
+      "Sistem deteksi tumpahan sludge oil berbasis AI menggunakan citra satelit SAR Sentinel-1. Dilengkapi dashboard web interaktif untuk analisis, estimasi luas pencemaran, dan penilaian tingkat ancaman lingkungan.",
+    fullDescription:
+      "Sludge Monitor adalah sistem monitoring berbasis AI yang dirancang untuk mendeteksi tumpahan sludge oil di laut menggunakan citra satelit SAR (Synthetic Aperture Radar) dari Sentinel-1. Sistem ini menggunakan arsitektur Attention U-Net untuk segmentasi area tumpahan, kemudian menghitung estimasi luas pencemaran dan menilai tingkat ancaman lingkungan. Aplikasi ini dibangun dengan FastAPI sebagai backend API dan dashboard web modern menggunakan HTML, JavaScript, dan Tailwind CSS. Fitur utama meliputi drag-and-drop upload citra SAR, visualisasi overlay hasil deteksi, konfigurasi threshold dan resolusi spasial, serta riwayat log analisis. Seluruh sistem di-deploy menggunakan Docker di Hugging Face Spaces.",
+    tags: ["Python", "PyTorch", "FastAPI", "Docker", "Tailwind CSS", "Attention U-Net"],
+    features: [
+      "AI Segmentation - Deteksi otomatis area tumpahan oil menggunakan Attention U-Net",
+      "SAR Image Processing - Analisis citra radar satelit Sentinel-1 dengan OpenCV",
+      "Dashboard Interaktif - Web dashboard modern dengan KPI cards dan visualisasi hasil",
+      "Estimasi Pencemaran - Kalkulasi luas area tercemar dalam satuan meter persegi",
+      "Threat Level Assessment - Penilaian tingkat ancaman lingkungan secara otomatis",
+      "Configurable Parameters - Pengaturan threshold sigmoid dan resolusi spasial",
+      "Analysis History - Riwayat log analisis dengan timestamp dan detail hasil",
+      "Dockerized Deployment - Deploy menggunakan Docker di Hugging Face Spaces",
+    ],
+    image: projectSludge,
+    liveUrl: "https://huggingface.co/spaces/dimastianto/sludge-oil-detection",
+    year: "2025",
+    category: "AI / Deep Learning",
   },
   {
     id: "nega-chatbot",
