@@ -6,11 +6,13 @@ import { projects } from "@/components/ProjectsSection";
 import OptimizedImage from "@/components/OptimizedImage";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { t } = useLanguage();
 
   const projectImages = project?.images || (project ? [project.image] : []);
 
@@ -41,7 +43,7 @@ const ProjectDetail = () => {
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors mb-10"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Portfolio
+              {t("projectDetail.back")}
             </Link>
           </motion.div>
 
@@ -54,13 +56,13 @@ const ProjectDetail = () => {
           >
             <div className="md:col-span-8">
               <p className="eyebrow mb-4">
-                {project.category || "Project"} &middot; {project.year || ""}
+                {t(`project.${project.id}.category`) || t("projectDetail.category")} &middot; {project.year || ""}
               </p>
               <h1 className="display-lg text-[clamp(2rem,7vw,5rem)] mb-4">
                 {project.title}
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                {project.fullDescription}
+                {t(`project.${project.id}.fullDescription`)}
               </p>
             </div>
             <div className="md:col-span-4 flex flex-wrap gap-2">
@@ -149,18 +151,18 @@ const ProjectDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <p className="eyebrow mb-6">Key Features</p>
+              <p className="eyebrow mb-6">{t("projectDetail.keyFeatures")}</p>
               <h2 className="display-lg text-3xl md:text-4xl mb-8">
-                What's Inside
+                {t("projectDetail.whatsInside")}
               </h2>
               <div className="grid md:grid-cols-2 gap-0 border-t border-border">
-                {project.features.map((feature) => (
+                {project.features.map((_, idx) => (
                   <div
-                    key={feature}
+                    key={idx}
                     className="border-b border-border py-4 pr-4 flex items-start gap-3 md:[&:nth-child(odd)]:border-r md:[&:nth-child(odd)]:pr-6"
                   >
                     <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-1" strokeWidth={2} />
-                    <span className="text-sm leading-relaxed">{feature}</span>
+                    <span className="text-sm leading-relaxed">{t(`project.${project.id}.feature.${idx}`)}</span>
                   </div>
                 ))}
               </div>
@@ -175,12 +177,12 @@ const ProjectDetail = () => {
             >
               {/* Meta */}
               <div className="border border-border rounded-xl p-5 md:p-6 space-y-4">
-                <p className="eyebrow">Project Meta</p>
+                <p className="eyebrow">{t("projectDetail.meta")}</p>
                 <div className="space-y-3">
                   {[
-                    { label: "Year", value: project.year || "—" },
-                    { label: "Category", value: project.category || "—" },
-                    { label: "Role", value: "Developer" },
+                    { label: t("projectDetail.year"), value: project.year || "—" },
+                    { label: t("projectDetail.category"), value: t(`project.${project.id}.category`) || "—" },
+                    { label: t("projectDetail.role"), value: t("projectDetail.role") },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -199,7 +201,7 @@ const ProjectDetail = () => {
 
               {/* Tech stack */}
               <div className="border border-border rounded-xl p-5 md:p-6 space-y-4">
-                <p className="eyebrow">Tech Stack</p>
+                <p className="eyebrow">{t("projectDetail.techStack")}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
@@ -222,7 +224,7 @@ const ProjectDetail = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-between bg-foreground text-background rounded-full pl-5 pr-1.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
                     >
-                      Visit Live
+                      {t("projectDetail.visitLive")}
                       <span className="w-9 h-9 rounded-full bg-background text-foreground flex items-center justify-center">
                         <ExternalLink className="w-3.5 h-3.5" />
                       </span>
@@ -235,7 +237,7 @@ const ProjectDetail = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-between border border-border rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
                     >
-                      GitHub
+                      {t("projectDetail.github")}
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   )}

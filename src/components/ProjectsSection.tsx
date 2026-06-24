@@ -245,13 +245,13 @@ const ProjectsSection = () => {
                   {/* Bottom metadata */}
                   <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 text-background">
                     <p className="text-[10px] uppercase tracking-[0.22em] opacity-70 mb-2">
-                      {featuredProject.category} &middot; {featuredProject.year}
+                      {t(`project.${featuredProject.id}.category`)} &middot; {featuredProject.year}
                     </p>
                     <h3 className="display-lg text-2xl md:text-4xl mb-2 group-hover:underline underline-offset-4 decoration-2">
                       {featuredProject.title}
                     </h3>
                     <p className="text-xs md:text-sm text-background/70 max-w-md line-clamp-2">
-                      {featuredProject.description}
+                      {t(`project.${featuredProject.id}.description`)}
                     </p>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ const ProjectsSection = () => {
                   {project.title}
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">
-                  {project.category}
+                  {t(`project.${project.id}.category`)}
                 </p>
               </div>
               <div className="col-span-7 md:col-span-4 hidden md:flex flex-wrap gap-1.5">
@@ -349,26 +349,29 @@ const ProjectsSection = () => {
   );
 };
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
-  <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground border border-border">
-    <OptimizedImage src={project.image} alt={project.title} className="w-full h-full" loading="lazy" />
-    <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const { t } = useLanguage();
+  return (
+    <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground border border-border">
+      <OptimizedImage src={project.image} alt={project.title} className="w-full h-full" loading="lazy" />
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
 
-    <div className="absolute top-4 left-4 text-background">
-      <p className="text-[11px] font-mono uppercase tracking-[0.2em] opacity-80">
-        0{index + 1} / 0{projects.length}
-      </p>
-    </div>
+      <div className="absolute top-4 left-4 text-background">
+        <p className="text-[11px] font-mono uppercase tracking-[0.2em] opacity-80">
+          0{index + 1} / 0{projects.length}
+        </p>
+      </div>
 
-    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-background">
-      <p className="text-[10px] uppercase tracking-[0.22em] opacity-70 mb-1">
-        {project.category} &middot; {project.year}
-      </p>
-      <h3 className="display-lg text-xl md:text-2xl group-hover:underline underline-offset-4 decoration-2">
-        {project.title}
-      </h3>
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-background">
+        <p className="text-[10px] uppercase tracking-[0.22em] opacity-70 mb-1">
+          {t(`project.${project.id}.category`)} &middot; {project.year}
+        </p>
+        <h3 className="display-lg text-xl md:text-2xl group-hover:underline underline-offset-4 decoration-2">
+          {project.title}
+        </h3>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ProjectsSection;
