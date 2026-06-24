@@ -7,7 +7,7 @@ import ContactSection from "@/components/ContactSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import profilePhoto from "@/assets/Profil-photo.jpeg";
+import profilePhoto from "@/assets/123.jpg";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
