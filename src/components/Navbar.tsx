@@ -71,7 +71,7 @@ const Navbar = () => {
                 Ikhsan Dimastianto
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Informatics Student
+                {t("nav.subtitle")}
               </span>
             </span>
           </button>

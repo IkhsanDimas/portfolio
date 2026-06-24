@@ -29,9 +29,9 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { value: 3, suffix: "+", label: "Projects Shipped" },
-    { value: 6, suffix: "+", label: "Technologies Mastered" },
-    { value: 2, suffix: "mo", label: "Internship Experience" },
+    { value: 3, suffix: "+", label: t("about.stat.projects") },
+    { value: 6, suffix: "+", label: t("about.stat.technologies") },
+    { value: 2, suffix: "mo", label: t("about.stat.internship") },
   ];
 
   const skills = [
@@ -53,7 +53,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="md:col-span-8">
-            <p className="eyebrow mb-4">(01) &mdash; About</p>
+            <p className="eyebrow mb-4">{t("about.eyebrow")}</p>
             <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("about.title")}
             </h2>

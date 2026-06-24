@@ -1,8 +1,9 @@
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const socialLinks = [
     { icon: Github, url: "https://github.com/IkhsanDimas", label: "GitHub" },
@@ -11,11 +12,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: t("footer.linkAbout"), href: "#about" },
+    { label: t("footer.linkExperience"), href: "#experience" },
+    { label: t("footer.linkSkills"), href: "#skills" },
+    { label: t("footer.linkProjects"), href: "#projects" },
+    { label: t("footer.linkContact"), href: "#contact" },
   ];
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -42,12 +43,12 @@ const Footer = () => {
                   Ikhsan Dimastianto
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  Informatics Engineering Student
+                  {t("footer.subtitle")}
                 </p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              Membangun aplikasi web yang bersih, terukur, dan bermanfaat. Saat ini fokus pada ekosistem React, TypeScript, dan Supabase.
+              {t("footer.description")}
             </p>
           </motion.div>
 
@@ -60,12 +61,12 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
-              Navigate
+              {t("footer.navigate")}
             </h4>
             <nav className="flex flex-col gap-2.5">
               {quickLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
@@ -88,7 +89,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
-              Connect
+              {t("footer.connect")}
             </h4>
             <div className="flex gap-2">
               {socialLinks.map((social) => (
@@ -111,18 +112,18 @@ const Footer = () => {
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition-colors mt-2"
             >
               <ArrowUp className="w-3.5 h-3.5" />
-              Back to Top
+              {t("footer.backToTop")}
             </button>
           </motion.div>
         </div>
 
-        {/* Signature line — massive monogram */}
+        {/* Signature line */}
         <div className="py-8 md:py-12 flex items-center justify-between">
           <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-            © {currentYear} — Crafted with care in Indonesia
+            {t("footer.copyright")}
           </p>
           <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-            Built with React &amp; Tailwind
+            {t("footer.tagline")}
           </p>
         </div>
 

@@ -113,6 +113,29 @@ export const translations: Translations = {
   "experience.clickToZoom": { id: "Klik untuk perbesar", en: "Click to zoom" },
   "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },
   "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
+
+  // Navbar
+  "nav.subtitle": { id: "Mahasiswa Informatika", en: "Informatics Student" },
+
+  // About eyebrow & stats
+  "about.eyebrow": { id: "(01) — Tentang", en: "(01) — About" },
+  "about.stat.projects": { id: "Proyek Terselesaikan", en: "Projects Shipped" },
+  "about.stat.technologies": { id: "Teknologi Dikuasai", en: "Technologies Mastered" },
+  "about.stat.internship": { id: "Pengalaman Magang", en: "Internship Experience" },
+
+  // Footer
+  "footer.copyright": { id: `© ${new Date().getFullYear()} Ikhsan Dimastianto. Hak Cipta Dilindungi.`, en: `© ${new Date().getFullYear()} Ikhsan Dimastianto. All Rights Reserved.` },
+  "footer.tagline": { id: "Dirancang & dikembangkan dengan dedikasi", en: "Designed & developed with dedication" },
+  "footer.navigate": { id: "Navigasi", en: "Navigate" },
+  "footer.connect": { id: "Terhubung", en: "Connect" },
+  "footer.backToTop": { id: "Kembali ke Atas", en: "Back to Top" },
+  "footer.description": { id: "Membangun aplikasi web yang bersih, terukur, dan bermanfaat. Saat ini fokus pada ekosistem React, TypeScript, dan Supabase.", en: "Building clean, scalable, and impactful web applications. Currently focused on the React, TypeScript, and Supabase ecosystem." },
+  "footer.subtitle": { id: "Mahasiswa Teknik Informatika", en: "Informatics Engineering Student" },
+  "footer.linkAbout": { id: "Tentang", en: "About" },
+  "footer.linkExperience": { id: "Pengalaman", en: "Experience" },
+  "footer.linkSkills": { id: "Keahlian", en: "Skills" },
+  "footer.linkProjects": { id: "Proyek", en: "Projects" },
+  "footer.linkContact": { id: "Kontak", en: "Contact" },
 };
 
 interface LanguageContextType {
