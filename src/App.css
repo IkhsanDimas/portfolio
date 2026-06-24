@@ -1,0 +1,4 @@
+/* App.css — intentionally minimal.
+   Global styles live in index.css. The legacy #root centering rules were
+   removed because the refreshed layout uses full-bleed sections managed
+   by each component's container. */
