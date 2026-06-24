@@ -7,6 +7,7 @@ interface OptimizedImageProps {
   className?: string;
   loading?: "lazy" | "eager";
   priority?: boolean;
+  objectFit?: "cover" | "contain";
 }
 
 const OptimizedImage = ({ 
@@ -14,7 +15,8 @@ const OptimizedImage = ({
   alt, 
   className = "", 
   loading = "lazy",
-  priority = false 
+  priority = false,
+  objectFit = "cover"
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -30,7 +32,7 @@ const OptimizedImage = ({
       <motion.img
         src={src}
         alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
+        className={`w-full h-full object-${objectFit} transition-opacity duration-300 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         loading={priority ? "eager" : loading}

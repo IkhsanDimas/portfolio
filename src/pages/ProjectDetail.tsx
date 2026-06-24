@@ -99,6 +99,7 @@ const ProjectDetail = () => {
                   className="w-full h-full"
                   loading="eager"
                   priority
+                  objectFit="contain"
                 />
               </motion.div>
             </AnimatePresence>
