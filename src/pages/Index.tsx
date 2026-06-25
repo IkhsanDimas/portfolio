@@ -99,7 +99,6 @@ const Index = () => {
 
                 <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-[0.18em]">
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{t("hero.basedIn")}</span>
                   <span className="font-semibold text-foreground">{t("hero.location")}</span>
                 </div>
               </div>
