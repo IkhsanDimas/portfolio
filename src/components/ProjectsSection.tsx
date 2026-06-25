@@ -9,7 +9,7 @@ import projectOtaku from "@/assets/project-otaku.png";
 import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
 import projectSludge from "@/assets/project-sludge.png";
-import projectEsteh from "@/assets/project-esteh.png";
+import projectEsteh from "@/assets/mockup estehjumbo.png";
 
 export interface Project {
   id: string;
