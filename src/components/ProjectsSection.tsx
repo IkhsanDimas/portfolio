@@ -4,7 +4,7 @@ import { ArrowUpRight, ExternalLink, Github as GithubIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import OptimizedImage from "@/components/OptimizedImage";
-import projectChatbot from "@/assets/project-chatbot.jpeg";
+import projectChatbot from "@/assets/nega mockup.png";
 import projectOtaku from "@/assets/project-otaku.png";
 import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
