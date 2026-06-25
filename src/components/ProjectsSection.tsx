@@ -8,7 +8,7 @@ import projectChatbot from "@/assets/nega mockup.png";
 import projectOtaku from "@/assets/project-otaku.png";
 import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
-import projectSludge from "@/assets/project-sludge.png";
+import projectSludge from "@/assets/sludge monitor.png";
 import projectEsteh from "@/assets/mockup estehjumbo.png";
 
 export interface Project {
