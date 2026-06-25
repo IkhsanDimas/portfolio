@@ -122,9 +122,6 @@ const Footer = () => {
           <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
             {t("footer.copyright")}
           </p>
-          <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-            {t("footer.tagline")}
-          </p>
         </div>
 
         <div
