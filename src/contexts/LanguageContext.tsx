@@ -14,6 +14,7 @@ export const translations: Translations = {
   "nav.about": { id: "Tentang", en: "About" },
   "nav.skills": { id: "Keahlian", en: "Skills" },
   "nav.projects": { id: "Proyek", en: "Projects" },
+  "nav.experience": { id: "Pengalaman", en: "Experience" },
   "nav.contact": { id: "Kontak", en: "Contact" },
   "nav.letsTalk": { id: "Mari Bicara", en: "Let's Talk" },
 
@@ -91,8 +92,8 @@ export const translations: Translations = {
   // CTA Section
   "cta.eyebrow": { id: "Mari Bekerja Sama", en: "Let's Work Together" },
   "cta.title": { id: "Tertarik Bekerja Sama?", en: "Interested to Work Together?" },
-  "cta.headline1": { id: "Start Your", en: "Start Your" },
-  "cta.headline2": { id: "Next Project", en: "Next Project" },
+  "cta.headline1": { id: "Mulai", en: "Start Your" },
+  "cta.headline2": { id: "Proyek Anda", en: "Next Project" },
   "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Ceritakan ide Anda, kita diskusikan bersama.", en: "I'm open to freelance opportunities, internships, or project collaborations. Share your idea and let's discuss it together." },
   "cta.chatWhatsApp": { id: "Chat WhatsApp", en: "Chat on WhatsApp" },
   "cta.connectOn": { id: "Terhubung di", en: "Connect on" },
@@ -150,9 +151,31 @@ export const translations: Translations = {
   "projectDetail.year": { id: "Tahun", en: "Year" },
   "projectDetail.category": { id: "Kategori", en: "Category" },
   "projectDetail.role": { id: "Peran", en: "Role" },
+  "projectDetail.roleValue": { id: "Fullstack Developer", en: "Fullstack Developer" },
   "projectDetail.techStack": { id: "Teknologi", en: "Tech Stack" },
   "projectDetail.visitLive": { id: "Kunjungi Situs", en: "Visit Live" },
   "projectDetail.github": { id: "GitHub", en: "GitHub" },
+
+  // Section Eyebrows
+  "eyebrow.experience": { id: "(02) — Pengalaman", en: "(02) — Experience" },
+  "eyebrow.skills": { id: "(03) — Keahlian", en: "(03) — Skills" },
+  "eyebrow.projects": { id: "(04) — Proyek Pilihan", en: "(04) — Selected Work" },
+  "eyebrow.contact": { id: "(05) — Kontak", en: "(05) — Contact" },
+
+  // Projects Section
+  "projects.featured": { id: "Unggulan", en: "Featured" },
+  "projects.live": { id: "Live", en: "Live" },
+  "projects.detail": { id: "Detail", en: "Detail" },
+
+  // Experience Section
+  "experience.badge": { id: "Kerja Praktik 2026", en: "Internship 2026" },
+  "experience.institutionName": { id: "Kejaksaan Tinggi Kepulauan Riau", en: "High Prosecution Office of Riau Islands" },
+
+  // Contact Section
+  "contact.sending": { id: "Mengirim...", en: "Sending..." },
+
+  // Loading Screen
+  "loading.subtitle": { id: "Teknik Informatika", en: "Informatics Engineering" },
 
   // Projects - DASKRIMTI
   "project.daskrimti.category": { id: "Dashboard Internal", en: "Internal Dashboard" },

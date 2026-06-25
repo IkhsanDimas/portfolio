@@ -183,7 +183,7 @@ const ProjectDetail = () => {
                   {[
                     { label: t("projectDetail.year"), value: project.year || "—" },
                     { label: t("projectDetail.category"), value: t(`project.${project.id}.category`) || "—" },
-                    { label: t("projectDetail.role"), value: t("projectDetail.role") },
+                    { label: t("projectDetail.role"), value: t("projectDetail.roleValue") },
                   ].map((item) => (
                     <div
                       key={item.label}

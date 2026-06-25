@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const LoadingScreen = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-background"
@@ -37,7 +40,7 @@ const LoadingScreen = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          Informatics Engineering
+          {t("loading.subtitle")}
         </motion.p>
 
         {/* Dots */}

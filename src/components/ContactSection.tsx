@@ -79,7 +79,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="md:col-span-8">
-            <p className="eyebrow mb-4">(05) &mdash; Contact</p>
+            <p className="eyebrow mb-4">{t("eyebrow.contact")}</p>
             <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("contact.title")} {t("contact.titleHighlight")}
             </h2>
@@ -180,7 +180,7 @@ const ContactSection = () => {
                   {isLoading ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Sending...
+                      {t("contact.sending")}
                     </>
                   ) : (
                     <>

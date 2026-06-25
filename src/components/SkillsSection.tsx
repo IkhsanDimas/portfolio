@@ -71,7 +71,7 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="md:col-span-8">
-            <p className="eyebrow mb-4">(03) &mdash; Skills</p>
+            <p className="eyebrow mb-4">{t("eyebrow.skills")}</p>
             <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("skills.title")} {t("skills.titleHighlight")}
             </h2>

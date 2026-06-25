@@ -182,7 +182,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="eyebrow mb-4">(04) &mdash; Selected Work</p>
+            <p className="eyebrow mb-4">{t("eyebrow.projects")}</p>
             <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
               {t("projects.title")} {t("projects.titleHighlight")}
             </h2>
@@ -243,7 +243,7 @@ const ProjectsSection = () => {
                   {/* Featured badge */}
                   <div className="absolute top-4 right-4 md:top-6 md:right-6">
                     <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] bg-background text-foreground rounded-full">
-                      Featured
+                      {t("projects.featured")}
                     </span>
                   </div>
 
@@ -356,14 +356,14 @@ const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.18em] border border-border rounded-full px-3 py-1.5 hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
                   >
-                    <ExternalLink className="w-3 h-3" /> Live
+                    <ExternalLink className="w-3 h-3" /> {t("projects.live")}
                   </a>
                 )}
                 <Link
                   to={`/project/${project.id}`}
                   className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.18em] border border-border rounded-full px-3 py-1.5 hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
                 >
-                  Detail <ArrowUpRight className="w-3 h-3" />
+                  {t("projects.detail")} <ArrowUpRight className="w-3 h-3" />
                 </Link>
               </div>
             </motion.div>

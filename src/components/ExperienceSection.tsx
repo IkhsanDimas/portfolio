@@ -38,7 +38,7 @@ const ExperienceSection = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="md:col-span-8">
-              <p className="eyebrow mb-4">(02) &mdash; Experience</p>
+              <p className="eyebrow mb-4">{t("eyebrow.experience")}</p>
               <h2 className="display-lg text-[clamp(2rem,7vw,5rem)]">
                 {t("experience.title")} {t("experience.subtitle")}
               </h2>
@@ -74,13 +74,13 @@ const ExperienceSection = () => {
                     <div className="flex items-center gap-2">
                       <Building2 className="w-3.5 h-3.5" />
                       <span className="text-sm font-semibold">
-                        Kejaksaan Tinggi Kepulauan Riau
+                        {t("experience.institutionName")}
                       </span>
                     </div>
                   </div>
                   <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-background/20 text-[10px] font-bold uppercase tracking-[0.18em]">
                     <Award className="w-3 h-3" />
-                    Kerja Praktik 2026
+                    {t("experience.badge")}
                   </span>
                 </div>
               </div>

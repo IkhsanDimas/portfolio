@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "#about", label: t("nav.about") },
+    { href: "#experience", label: t("nav.experience") },
     { href: "#skills", label: t("nav.skills") },
     { href: "#projects", label: t("nav.projects") },
     { href: "#contact", label: t("nav.contact") },
@@ -23,7 +24,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["about", "skills", "projects", "contact"];
+      const sections = ["about", "experience", "skills", "projects", "contact"];
       let current = "";
       for (const section of sections) {
         const element = document.getElementById(section);
