@@ -9,6 +9,7 @@ import projectOtaku from "@/assets/project-otaku.png";
 import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
 import projectSludge from "@/assets/project-sludge.png";
+import projectEsteh from "@/assets/project-esteh.png";
 
 export interface Project {
   id: string;
@@ -49,6 +50,29 @@ export const projects: Project[] = [
     images: [projectPortal, projectPanel],
     year: "2026",
     category: "Internal Dashboard",
+  },
+  {
+    id: "esteh-jumbo",
+    title: "Es Teh Jumbo TNJ",
+    description:
+      "Sistem e-commerce pemesanan minuman interaktif lengkap dengan kustomisasi rasa/topping, pelacakan pesanan berbasis peta (Leaflet.js), inventarisasi bahan baku dinamis, serta panel manajemen admin terpadu.",
+    fullDescription:
+      "Es Teh Jumbo TNJ adalah platform e-commerce e-retail minuman modern yang dibangun menggunakan Laravel dan Tailwind CSS. Aplikasi ini menawarkan kustomisasi minuman yang kaya (seperti level es, level gula, dan pilihan topping), keranjang belanja interaktif berbasis Alpine.js, pelacakan pengiriman kurir real-time menggunakan peta Leaflet.js, integrasi checkout notifikasi WhatsApp, dan sistem manajemen inventaris bahan baku (es, teh, gula, cup, dll.) yang terintegrasi secara otomatis saat pesanan dibuat. Panel admin lengkap memungkinkan pengelolaan produk, pembaruan status pesanan real-time, grafik statistik, dan monitoring stok bahan baku secara aman.",
+    tags: ["Laravel", "Tailwind CSS", "Alpine.js", "Leaflet.js", "MySQL/SQLite"],
+    features: [
+      "Kustomisasi Menu Interaktif - Sesuaikan rasa (gula/es) dan topping secara real-time sebelum memesan",
+      "Keranjang Belanja Dinamis - Manajemen keranjang interaktif dan instan yang didukung oleh Alpine.js",
+      "Lacak Pesanan Real-Time - Visualisasi pelacakan pengiriman kurir menggunakan peta interaktif Leaflet.js",
+      "Checkout API WhatsApp - Kirim rincian pesanan dan status secara otomatis ke WhatsApp",
+      "Manajemen Inventaris Bahan Baku - Pengurangan stok bahan baku secara otomatis di setiap pesanan",
+      "Panel Admin Terpadu - Dashboard statistik, CRUD produk, manajemen pesanan, dan kontrol inventaris",
+      "Desain UI Responsif - Tampilan modern, bersih, dan cepat yang dioptimalkan untuk mobile dan desktop",
+      "Autentikasi & Otorisasi Aman - Batasan akses admin menggunakan Middleware kustom Laravel",
+    ],
+    image: projectEsteh,
+    githubUrl: "https://github.com/IkhsanDimas/EstehJumboTNJ",
+    year: "2026",
+    category: "E-Commerce Web App",
   },
   {
     id: "sludge-monitor",
