@@ -70,6 +70,7 @@ export const projects: Project[] = [
       "Autentikasi & Otorisasi Aman - Batasan akses admin menggunakan Middleware kustom Laravel",
     ],
     image: projectEsteh,
+    liveUrl: "https://estehjumbotnj.com/",
     githubUrl: "https://github.com/IkhsanDimas/EstehJumboTNJ",
     year: "2026",
     category: "E-Commerce Web App",
