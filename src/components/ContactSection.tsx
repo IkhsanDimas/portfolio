@@ -30,7 +30,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: t("contact.location"),
-      value: "Indonesia",
+      value: t("hero.location"),
       href: "#",
     },
   ];
