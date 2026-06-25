@@ -95,7 +95,7 @@ export const projects: Project[] = [
     ],
     image: projectSludge,
     liveUrl: "https://huggingface.co/spaces/dimastianto/sludge-oil-detection",
-    year: "2025",
+    year: "2026",
     category: "AI / Deep Learning",
   },
   {
