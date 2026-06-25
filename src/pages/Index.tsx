@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import profilePhoto from "@/assets/123.jpg";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
@@ -96,11 +96,6 @@ const Index = () => {
                     <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
                   </span>
                 </button>
-
-                <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-[0.18em]">
-                  <MapPin className="w-3.5 h-3.5" />
-                  <span className="font-semibold text-foreground">{t("hero.location")}</span>
-                </div>
               </div>
             </motion.div>
 
