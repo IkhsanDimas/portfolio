@@ -45,8 +45,8 @@ export const translations: Translations = {
   // About
   "about.title": { id: "Tentang Saya", en: "About Me" },
   "about.lead": { id: "Sekilas tentang latar belakang, pendekatan, dan hal-hal yang saya kerjakan saat tidak sedang menulis kode.", en: "A glimpse into my background, approach, and what I focus on beyond writing code." },
-  "about.p1": { id: "Bagi saya, menulis kode adalah menyalurkan energi kreatif. Saya sangat menikmati tantangan mengubah ide rumit menjadi aplikasi web yang praktis dan menyenangkan saat digunakan.", en: "For me, writing code is channeling creative energy. I absolutely love the challenge of turning complex ideas into web apps that are practical and fun to use." },
-  "about.p2": { id: "Antarmuka web yang hebat adalah antarmuka yang mengalir tanpa hambatan. Saya menaruh perhatian besar pada detail transisi dan responsivitas agar setiap klik terasa memuaskan bagi pengguna.", en: "A great web interface is one that flows without friction. I pay close attention to transitions and responsiveness to ensure every click feels satisfying for the user." },
+  "about.p1": { id: "Saya menulis kode untuk menyelesaikan masalah, bukan sekadar membuat sesuatu bekerja.", en: "I write code to solve problems, not just to make things work." },
+  "about.p2": { id: "Desain yang baik itu tidak terlihat — pengguna hanya merasakan alurnya yang mulus dan tujuannya tercapai.", en: "Good design is invisible — users simply feel the flow and reach their goal." },
   "about.p3": { id: "Rasa penasaran adalah apa yang membuat saya terus melangkah. Menjelajahi teknologi baru bukan sekadar tuntutan kerja, melainkan hobi yang selalu membuat saya antusias setiap hari.", en: "Curiosity is what keeps me moving. Exploring new tech is not just a job requirement, but a hobby that keeps me enthusiastic every single day." },
   
   // About Skills
