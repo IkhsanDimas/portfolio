@@ -29,7 +29,7 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { value: 4, suffix: "+", label: t("about.stat.projects") },
+    { value: 5, suffix: "+", label: t("about.stat.projects") },
     { value: 6, suffix: "+", label: t("about.stat.technologies") },
     { value: 2, suffix: "mo", label: t("about.stat.internship") },
   ];
