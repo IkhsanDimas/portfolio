@@ -58,7 +58,7 @@ export const projects: Project[] = [
       "Sistem e-commerce pemesanan minuman interaktif lengkap dengan kustomisasi rasa/topping, pelacakan pesanan berbasis peta (Leaflet.js), inventarisasi bahan baku dinamis, serta panel manajemen admin terpadu.",
     fullDescription:
       "Es Teh Jumbo TNJ adalah platform e-commerce e-retail minuman modern yang dibangun menggunakan Laravel dan Tailwind CSS. Aplikasi ini menawarkan kustomisasi minuman yang kaya (seperti level es, level gula, dan pilihan topping), keranjang belanja interaktif berbasis Alpine.js, pelacakan pengiriman kurir real-time menggunakan peta Leaflet.js, integrasi checkout notifikasi WhatsApp, dan sistem manajemen inventaris bahan baku (es, teh, gula, cup, dll.) yang terintegrasi secara otomatis saat pesanan dibuat. Panel admin lengkap memungkinkan pengelolaan produk, pembaruan status pesanan real-time, grafik statistik, dan monitoring stok bahan baku secara aman.",
-    tags: ["Laravel", "Tailwind CSS", "Alpine.js", "Leaflet.js", "MySQL/SQLite"],
+    tags: ["Laravel", "Tailwind CSS", "Alpine.js", "Leaflet.js", "PostgreSQL"],
     features: [
       "Kustomisasi Menu Interaktif - Sesuaikan rasa (gula/es) dan topping secara real-time sebelum memesan",
       "Keranjang Belanja Dinamis - Manajemen keranjang interaktif dan instan yang didukung oleh Alpine.js",
