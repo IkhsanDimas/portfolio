@@ -22,9 +22,9 @@ export const translations: Translations = {
   "hero.greeting": { id: "Halo, Saya", en: "Hi, I'm" },
   "hero.name": { id: "Ikhsan Dimastianto", en: "Ikhsan Dimastianto" },
   "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
-  "hero.student": { id: "Mahasiswa", en: "Student of" },
-  "hero.major": { id: "Teknik Informatika", en: "Informatics Engineering" },
-  "hero.description": { id: "Mahasiswa Teknik Informatika yang membangun aplikasi web modern dengan React, TypeScript, dan Supabase. Fokus pada solusi yang bersih, terukur, dan memberikan dampak nyata.", en: "An Informatics Engineering student crafting modern web applications with React, TypeScript, and Supabase. Focused on clean, scalable solutions with real impact." },
+  "hero.student": { id: "Developer", en: "Developer" },
+  "hero.major": { id: "Developer", en: "Developer" },
+  "hero.description": { id: "Full Stack Developer yang membangun aplikasi web modern dengan React, TypeScript, dan Supabase. Fokus pada solusi yang bersih, terukur, dan memberikan dampak nyata.", en: "Full Stack Developer crafting modern web applications with React, TypeScript, and Supabase. Focused on clean, scalable solutions with real impact." },
   "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
   "hero.location": { id: "Indonesia", en: "Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
@@ -34,7 +34,7 @@ export const translations: Translations = {
   "hero.headline1": { id: "Solusi", en: "Digital" },
   "hero.headline2": { id: "Digital", en: "Solutions" },
   "hero.headline3": { id: "Yang Berguna", en: "That Matter" },
-  "hero.role": { id: "Mahasiswa", en: "Student" },
+  "hero.role": { id: "Full Stack", en: "Full Stack" },
 
   // Marquee
   "marquee.build": { id: "Build.", en: "Build." },
@@ -116,7 +116,7 @@ export const translations: Translations = {
   "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
 
   // Navbar
-  "nav.subtitle": { id: "Mahasiswa Informatika", en: "Informatics Student" },
+  "nav.subtitle": { id: "Full Stack Developer", en: "Full Stack Developer" },
 
   // About eyebrow & stats
   "about.eyebrow": { id: "(01) — Tentang", en: "(01) — About" },
@@ -131,7 +131,7 @@ export const translations: Translations = {
   "footer.connect": { id: "Terhubung", en: "Connect" },
   "footer.backToTop": { id: "Kembali ke Atas", en: "Back to Top" },
   "footer.description": { id: "Membangun aplikasi web yang bersih, terukur, dan bermanfaat. Saat ini fokus pada ekosistem React, TypeScript, dan Supabase.", en: "Building clean, scalable, and impactful web applications. Currently focused on the React, TypeScript, and Supabase ecosystem." },
-  "footer.subtitle": { id: "Mahasiswa Teknik Informatika", en: "Informatics Engineering Student" },
+  "footer.subtitle": { id: "Full Stack Developer", en: "Full Stack Developer" },
   "footer.linkAbout": { id: "Tentang", en: "About" },
   "footer.linkExperience": { id: "Pengalaman", en: "Experience" },
   "footer.linkSkills": { id: "Keahlian", en: "Skills" },

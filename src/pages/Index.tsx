@@ -141,7 +141,7 @@ const Index = () => {
                 </div>
 
                 {/* Role tag top-right */}
-                <div className="absolute top-5 right-5 text-right text-background">
+                <div className="absolute top-5 right-5 text-right text-zinc-900">
                   <p className="text-[10px] uppercase tracking-[0.22em] opacity-70">
                     {t("hero.role")}
                   </p>
