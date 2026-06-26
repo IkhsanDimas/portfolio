@@ -26,7 +26,7 @@ export const translations: Translations = {
   "hero.major": { id: "Developer", en: "Developer" },
   "hero.description": { id: "Sebagai Full Stack Developer, saya senang merancang database di belakang layar sekaligus membangun antarmuka interaktif yang nyaman di depan layar untuk menciptakan sistem web yang utuh.", en: "As a Full Stack Developer, I love structuring databases behind the scenes and building comfortable, interactive interfaces to create complete web systems." },
   "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
-  "hero.location": { id: "Indonesia", en: "Indonesia" },
+  "hero.location": { id: "Tanjungpinang, Kepulauan Riau, Indonesia", en: "Tanjungpinang, Riau Islands, Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
