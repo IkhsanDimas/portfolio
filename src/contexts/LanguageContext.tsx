@@ -45,8 +45,8 @@ export const translations: Translations = {
   // About
   "about.title": { id: "Tentang Saya", en: "About Me" },
   "about.lead": { id: "Sekilas tentang latar belakang, pendekatan, dan hal-hal yang saya kerjakan saat tidak sedang menulis kode.", en: "A glimpse into my background, approach, and what I focus on beyond writing code." },
-  "about.p1": { id: "Saya menulis kode untuk menyelesaikan masalah, bukan sekadar membuat sesuatu bekerja.", en: "I write code to solve problems, not just to make things work." },
-  "about.p2": { id: "Desain yang baik itu tidak terlihat — pengguna hanya merasakan alurnya yang mulus dan tujuannya tercapai.", en: "Good design is invisible — users simply feel the flow and reach their goal." },
+  "about.p1": { id: "Kekuatan utama saya terletak pada pemecahan masalah melalui kode. Saya senang merakit struktur database yang bersih dan mengoptimalkan kinerja sistem agar aplikasi dapat diandalkan setiap saat.", en: "My core strength lies in solving problems through code. I love structuring clean databases and optimizing system performance to ensure the application is reliable at all times." },
+  "about.p2": { id: "Saya percaya kenyamanan pengguna adalah kunci dari sebuah produk digital. Saya berfokus pada kecepatan respons dan kemudahan navigasi agar setiap halaman terasa hidup dan memuaskan saat digunakan.", en: "I believe user comfort is the key to any digital product. I focus on responsiveness and ease of navigation to make every page feel alive and satisfying to use." },
   "about.p3": { id: "Rasa penasaran adalah apa yang membuat saya terus melangkah. Menjelajahi teknologi baru bukan sekadar tuntutan kerja, melainkan hobi yang selalu membuat saya antusias setiap hari.", en: "Curiosity is what keeps me moving. Exploring new tech is not just a job requirement, but a hobby that keeps me enthusiastic every single day." },
   
   // About Skills
