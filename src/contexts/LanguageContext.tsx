@@ -24,7 +24,7 @@ export const translations: Translations = {
   "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
   "hero.student": { id: "Developer", en: "Developer" },
   "hero.major": { id: "Developer", en: "Developer" },
-  "hero.description": { id: "Full Stack Developer yang membangun aplikasi web modern dengan React, TypeScript, dan Supabase. Fokus pada solusi yang bersih, terukur, dan memberikan dampak nyata.", en: "Full Stack Developer crafting modern web applications with React, TypeScript, and Supabase. Focused on clean, scalable solutions with real impact." },
+  "hero.description": { id: "Saya seorang Full Stack Developer yang senang menghidupkan ide lewat baris kode. Dari merancang basis data yang andal hingga menyempurnakan interaksi visual, saya menikmati proses membangun web yang utuh.", en: "I'm a Full Stack Developer who loves bringing ideas to life through code. From designing solid databases to polishing visual interactions, I enjoy the craft of building complete web systems." },
   "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
   "hero.location": { id: "Indonesia", en: "Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
