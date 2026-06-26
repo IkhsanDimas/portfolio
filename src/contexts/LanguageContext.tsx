@@ -31,9 +31,9 @@ export const translations: Translations = {
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
   "hero.introEyebrow": { id: "Saya Merancang & Membangun", en: "I Design & Build" },
-  "hero.headline1": { id: "Solusi", en: "Digital" },
-  "hero.headline2": { id: "Digital", en: "Solutions" },
-  "hero.headline3": { id: "Yang Berguna", en: "That Matter" },
+  "hero.headline1": { id: "Ayo Bangun", en: "Let's Build" },
+  "hero.headline2": { id: "Solusi Digital", en: "Digital Solutions" },
+  "hero.headline3": { id: "Bersama Saya", en: "Together" },
   "hero.role": { id: "Full Stack", en: "Full Stack" },
 
   // Marquee
