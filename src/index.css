@@ -277,33 +277,6 @@
     border-color: hsl(var(--border));
   }
 
-  /* Rotating circular badge (the "Available for freelance" style stamp) */
-  .rotating-badge {
-    animation: rotate-slow 18s linear infinite;
-  }
-
-  @keyframes rotate-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Marquee for "Available / Collaborate / Learn" ticker */
-  .marquee {
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-
-  .marquee-track {
-    display: inline-flex;
-    animation: marquee 28s linear infinite;
-  }
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
   /* Scroll progress */
   .scroll-progress {
     position: fixed;

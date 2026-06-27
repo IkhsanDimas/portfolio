@@ -80,7 +80,7 @@ const AboutSection = () => {
                 index !== 0 ? "md:border-l border-border" : ""
               } ${index === 2 ? "col-span-2 md:col-span-1 border-t md:border-t-0 border-border" : ""}`}
             >
-              <div className="display-lg text-4xl md:text-6xl mb-1">
+              <div className="display-lg text-3xl md:text-4xl mb-1">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">

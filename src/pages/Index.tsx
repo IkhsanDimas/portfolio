@@ -4,7 +4,6 @@ import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import profilePhoto from "@/assets/profil.jpeg";
@@ -114,7 +113,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent" />
 
                 {/* Role tag top-right */}
-                <div className="absolute top-5 right-5 text-right text-zinc-900">
+                <div className="absolute top-5 right-5 text-right text-white">
                   <p className="text-[10px] uppercase tracking-[0.22em] opacity-70">
                     {t("hero.role")}
                   </p>
@@ -137,8 +136,6 @@ const Index = () => {
         <SkillsSection />
         <div className="section-divider" />
         <ProjectsSection />
-        <div className="section-divider" />
-        <CTASection />
         <div className="section-divider" />
         <ContactSection />
       </main>

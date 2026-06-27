@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { Mail, MapPin, Send, Loader2, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, ArrowUpRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -134,6 +134,21 @@ const ContactSection = () => {
               ))}
             </div>
 
+            {/* WhatsApp CTA */}
+            <div className="pt-6">
+              <button
+                onClick={() => window.open("https://wa.me/6283165359785?text=Halo%20Ikhsan!%20Saya%20tertarik%20dengan%20portfolio%20Anda.", "_blank")}
+                className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+                style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
+              >
+                <MessageCircle className="w-4 h-4" />
+                {t("cta.chatWhatsApp")}
+                <span className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center">
+                  <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
+                </span>
+              </button>
+            </div>
+
             {/* Fun note */}
             <div className="pt-4">
               <p className="text-xs text-muted-foreground">
@@ -174,7 +189,8 @@ const ContactSection = () => {
               <div className="pt-8">
                 <Button
                   type="submit"
-                  className="group inline-flex items-center gap-2 bg-foreground text-background pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity h-auto"
+                  className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity h-auto"
+                  style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -185,7 +201,7 @@ const ContactSection = () => {
                   ) : (
                     <>
                       {t("contact.send")}
-                      <span className="w-9 h-9 rounded-full bg-background text-foreground flex items-center justify-center">
+                      <span className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center">
                         <Send className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
                       </span>
                     </>

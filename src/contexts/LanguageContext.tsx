@@ -31,9 +31,9 @@ export const translations: Translations = {
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
   "hero.introEyebrow": { id: "Full Stack Developer", en: "Full Stack Developer" },
-  "hero.headline1": { id: "Ayo Bangun", en: "Let's Build" },
-  "hero.headline2": { id: "Solusi Digital", en: "Digital Solutions" },
-  "hero.headline3": { id: "Bersama Saya", en: "Together" },
+  "hero.headline1": { id: "Membangun", en: "Building" },
+  "hero.headline2": { id: "Sistem Web", en: "Modern Web" },
+  "hero.headline3": { id: "Modern", en: "Systems" },
   "hero.role": { id: "Full Stack", en: "Full Stack" },
 
   // Marquee
@@ -119,7 +119,7 @@ export const translations: Translations = {
   "nav.subtitle": { id: "Full Stack Developer", en: "Full Stack Developer" },
 
   // About eyebrow & stats
-  "about.eyebrow": { id: "(01) — Tentang", en: "(01) — About" },
+  "about.eyebrow": { id: "01 / Tentang", en: "01 / About" },
   "about.stat.projects": { id: "Proyek Terselesaikan", en: "Projects Shipped" },
   "about.stat.technologies": { id: "Teknologi Dikuasai", en: "Technologies Mastered" },
   "about.stat.internship": { id: "Pengalaman Magang", en: "Internship Experience" },
@@ -157,10 +157,10 @@ export const translations: Translations = {
   "projectDetail.github": { id: "GitHub", en: "GitHub" },
 
   // Section Eyebrows
-  "eyebrow.experience": { id: "(02) — Pengalaman", en: "(02) — Experience" },
-  "eyebrow.skills": { id: "(03) — Keahlian", en: "(03) — Skills" },
-  "eyebrow.projects": { id: "(04) — Proyek Pilihan", en: "(04) — Selected Work" },
-  "eyebrow.contact": { id: "(05) — Kontak", en: "(05) — Contact" },
+  "eyebrow.experience": { id: "02 / Pengalaman", en: "02 / Experience" },
+  "eyebrow.skills": { id: "03 / Keahlian", en: "03 / Skills" },
+  "eyebrow.projects": { id: "04 / Proyek Pilihan", en: "04 / Selected Work" },
+  "eyebrow.contact": { id: "05 / Kontak", en: "05 / Contact" },
 
   // Projects Section
   "projects.featured": { id: "Unggulan", en: "Featured" },
