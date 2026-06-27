@@ -88,6 +88,8 @@ export const translations: Translations = {
   "contact.messagePlaceholder": { id: "Tuliskan pesan Anda...", en: "Write your message..." },
   "contact.send": { id: "Kirim Pesan", en: "Send Message" },
   "contact.success": { id: "Pesan terkirim! Saya akan segera menghubungi Anda.", en: "Message sent! I'll get back to you soon." },
+  "contact.errorSubmit": { id: "Gagal mengirim pesan. Silakan coba lagi.", en: "Failed to send message. Please try again." },
+  "contact.errorGeneral": { id: "Terjadi kesalahan. Silakan coba lagi.", en: "An error occurred. Please try again." },
 
   // CTA Section
   "cta.eyebrow": { id: "Mari Bekerja Sama", en: "Let's Work Together" },

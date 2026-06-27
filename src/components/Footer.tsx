@@ -1,9 +1,12 @@
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const socialLinks = [
     { icon: Github, url: "https://github.com/IkhsanDimas", label: "GitHub" },
@@ -70,7 +73,14 @@ const Footer = () => {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                    if (location.pathname !== "/") {
+                      navigate("/");
+                      setTimeout(() => {
+                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                      }, 100);
+                    } else {
+                      document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                    }
                   }}
                   className="text-sm font-display font-semibold hover:italic hover:underline underline-offset-4 decoration-2 w-fit transition-all"
                 >

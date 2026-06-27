@@ -10,6 +10,11 @@ interface OptimizedImageProps {
   objectFit?: "cover" | "contain";
 }
 
+const objectFitClasses = {
+  cover: "object-cover",
+  contain: "object-contain",
+};
+
 const OptimizedImage = ({ 
   src, 
   alt, 
@@ -32,7 +37,7 @@ const OptimizedImage = ({
       <motion.img
         src={src}
         alt={alt}
-        className={`w-full h-full object-${objectFit} transition-opacity duration-300 ${
+        className={`w-full h-full ${objectFitClasses[objectFit]} transition-opacity duration-300 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         loading={priority ? "eager" : loading}

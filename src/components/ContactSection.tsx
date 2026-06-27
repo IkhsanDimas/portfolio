@@ -58,10 +58,10 @@ const ContactSection = () => {
         toast.success(t("contact.success"));
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error("Gagal mengirim pesan. Silakan coba lagi.");
+        toast.error(t("contact.errorSubmit"));
       }
     } catch (error) {
-      toast.error("Terjadi kesalahan. Silakan coba lagi.");
+      toast.error(t("contact.errorGeneral"));
     } finally {
       setIsLoading(false);
     }

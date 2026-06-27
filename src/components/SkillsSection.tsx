@@ -125,7 +125,7 @@ const SkillsSection = () => {
                     <img
                       src={skill.icon}
                       alt={skill.name}
-                      className="w-4 h-4"
+                      className={`w-4 h-4 ${(skill.name === "GitHub" || skill.name === "Next.js" || skill.name === "Vercel") ? "dark:invert" : ""}`}
                       loading="lazy"
                     />
                     <span className="text-xs font-semibold uppercase tracking-wider">

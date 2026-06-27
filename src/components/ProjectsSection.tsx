@@ -159,16 +159,23 @@ const ProjectsSection = () => {
   const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const [autoplayActive, setAutoplayActive] = useState(true);
+
   const featuredProject = projects[0];
   const featuredImages = featuredProject?.images || [featuredProject?.image];
 
   useEffect(() => {
-    if (featuredImages.length <= 1) return;
+    if (featuredImages.length <= 1 || !autoplayActive) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % featuredImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [featuredImages.length]);
+  }, [featuredImages.length, autoplayActive]);
+
+  const handleManualImageChange = (index: number) => {
+    setCurrentImageIndex(index);
+    setAutoplayActive(false);
+  };
 
   return (
     <section id="projects" className="py-24 md:py-32 px-4 md:px-6 relative">
@@ -256,7 +263,7 @@ const ProjectsSection = () => {
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            setCurrentImageIndex(idx);
+                            handleManualImageChange(idx);
                           }}
                           className={`h-1.5 rounded-full transition-all duration-300 ${
                             idx === currentImageIndex ? "bg-background w-6" : "bg-background/50 w-1.5"
