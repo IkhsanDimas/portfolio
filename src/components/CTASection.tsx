@@ -52,7 +52,7 @@ const CTASection = () => {
 
           {/* Headline */}
           <motion.h2
-            className="relative display-xl text-[clamp(3rem,10vw,8rem)] leading-[0.92] mb-8"
+            className="relative display-xl text-[clamp(2.5rem,9vw,7rem)] leading-[0.92] mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,7 +85,8 @@ const CTASection = () => {
           >
             <button
               onClick={handleWhatsApp}
-              className="group inline-flex items-center gap-2 bg-background text-foreground pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+              className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+              style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
             >
               <MessageCircle className="w-4 h-4" />
               {t("cta.chatWhatsApp")}

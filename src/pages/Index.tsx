@@ -42,22 +42,19 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           {/* Top row: eyebrow */}
           <motion.div
-            className="mb-8 md:mb-10 flex flex-wrap items-center gap-x-5 gap-y-3"
+            className="mb-8 md:mb-10 flex flex-wrap items-center gap-3 md:gap-4"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <p className="eyebrow">{t("hero.introEyebrow")}</p>
-            <span className="h-px w-8 bg-border hidden sm:block" />
-            <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground" />
+            <span className="accent-chip">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "hsl(var(--highlight))" }} />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ background: "hsl(var(--highlight))" }} />
               </span>
-              <span className="uppercase tracking-[0.18em] font-medium">
-                {t("hero.status")}
-              </span>
-            </div>
+              {t("hero.status")}
+            </span>
           </motion.div>
 
           {/* Main editorial grid */}
@@ -89,10 +86,11 @@ const Index = () => {
                   onClick={() =>
                     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="group inline-flex items-center gap-2 bg-foreground text-background pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+                  className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+                  style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
                 >
                   {t("hero.viewProjects")}
-                  <span className="w-9 h-9 rounded-full bg-background text-foreground flex items-center justify-center">
+                  <span className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center">
                     <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
                   </span>
                 </button>

@@ -117,10 +117,11 @@ const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={() => scrollToSection("#contact")}
-              className="ml-2 inline-flex items-center gap-2 bg-foreground text-background text-xs font-bold uppercase tracking-[0.16em] pl-4 pr-1.5 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+              className="ml-2 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] pl-4 pr-1.5 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+              style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
             >
               {t("nav.letsTalk")}
-              <span className="w-7 h-7 rounded-full bg-background text-foreground flex items-center justify-center">
+              <span className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
             </button>
