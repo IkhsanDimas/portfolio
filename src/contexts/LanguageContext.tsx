@@ -36,11 +36,6 @@ export const translations: Translations = {
   "hero.headline3": { id: "Modern", en: "Systems" },
   "hero.role": { id: "Full Stack", en: "Full Stack" },
 
-  // Marquee
-  "marquee.build": { id: "Build.", en: "Build." },
-  "marquee.design": { id: "Design.", en: "Design." },
-  "marquee.learn": { id: "Learn.", en: "Learn." },
-  "marquee.collaborate": { id: "Collaborate.", en: "Collaborate." },
 
   // About
   "about.title": { id: "Tentang Saya", en: "About Me" },

@@ -115,10 +115,10 @@ const Index = () => {
                 {/* Role tag top-right */}
                 <div className="absolute top-5 right-5 text-right text-white">
                   <p className="text-[10px] uppercase tracking-[0.22em] opacity-70">
-                    {t("hero.role")}
+                    {t("hero.basedIn")}
                   </p>
                   <p className="text-sm font-bold uppercase tracking-[0.12em]">
-                    {t("hero.major")}
+                    Tanjungpinang, ID
                   </p>
                 </div>
               </div>
