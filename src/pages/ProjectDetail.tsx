@@ -16,13 +16,20 @@ const ProjectDetail = () => {
 
   const projectImages = project?.images || (project ? [project.image] : []);
 
+  const [autoplayActive, setAutoplayActive] = useState(true);
+
   useEffect(() => {
-    if (projectImages.length <= 1) return;
+    if (projectImages.length <= 1 || !autoplayActive) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [projectImages.length]);
+  }, [projectImages.length, autoplayActive]);
+
+  const handleManualImageChange = (index: number) => {
+    setCurrentImageIndex(index);
+    setAutoplayActive(false); // Stop autoplay when user manually interacts
+  };
 
   if (!project) return <Navigate to="/" replace />;
 
@@ -108,7 +115,7 @@ const ProjectDetail = () => {
               <>
                 <button
                   onClick={() =>
-                    setCurrentImageIndex(
+                    handleManualImageChange(
                       (prev) => (prev - 1 + projectImages.length) % projectImages.length
                     )
                   }
@@ -119,7 +126,7 @@ const ProjectDetail = () => {
                 </button>
                 <button
                   onClick={() =>
-                    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length)
+                    handleManualImageChange((prev) => (prev + 1) % projectImages.length)
                   }
                   className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur flex items-center justify-center hover:bg-background transition-colors z-10"
                   aria-label="Next image"
@@ -131,7 +138,7 @@ const ProjectDetail = () => {
                   {projectImages.map((_, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setCurrentImageIndex(idx)}
+                      onClick={() => handleManualImageChange(idx)}
                       className={`h-1.5 rounded-full transition-all duration-300 ${
                         idx === currentImageIndex ? "bg-background w-6" : "bg-background/50 w-1.5"
                       }`}
@@ -223,10 +230,11 @@ const ProjectDetail = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between bg-foreground text-background rounded-full pl-5 pr-1.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+                      className="flex items-center justify-between rounded-full pl-5 pr-1.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+                      style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
                     >
                       {t("projectDetail.visitLive")}
-                      <span className="w-9 h-9 rounded-full bg-background text-foreground flex items-center justify-center">
+                      <span className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center">
                         <ExternalLink className="w-3.5 h-3.5" />
                       </span>
                     </a>

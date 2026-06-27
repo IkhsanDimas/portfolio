@@ -5,12 +5,15 @@ import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { href: "#about", label: t("nav.about") },
@@ -41,9 +44,18 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation and DOM mount before scrolling
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -176,10 +188,11 @@ const Navbar = () => {
                 </a>
                 <button
                   onClick={() => scrollToSection("#contact")}
-                  className="mt-2 inline-flex items-center justify-between bg-foreground text-background text-xs font-bold uppercase tracking-[0.16em] pl-4 pr-1.5 py-2 rounded-full"
+                  className="mt-2 inline-flex items-center justify-between text-xs font-bold uppercase tracking-[0.16em] pl-4 pr-1.5 py-2 rounded-full hover:opacity-90 transition-opacity"
+                  style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
                 >
                   {t("nav.letsTalk")}
-                  <span className="w-7 h-7 rounded-full bg-background text-foreground flex items-center justify-center">
+                  <span className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center">
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </button>
