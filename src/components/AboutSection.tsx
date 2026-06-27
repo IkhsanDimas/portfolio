@@ -110,25 +110,25 @@ const AboutSection = () => {
             </p>
           </motion.div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-0 border border-border rounded-xl overflow-hidden">
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-3 md:gap-4">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className={`p-6 md:p-8 relative group transition-colors hover:bg-secondary ${
-                  index % 2 === 0 ? "sm:border-r border-border" : ""
-                } ${index < 2 ? "border-b border-border" : ""}`}
+                className="p-6 md:p-8 relative group rounded-xl border border-border bg-card transition-all duration-300 hover:bg-secondary/60 hover:border-foreground/20 hover:shadow-lg hover:-translate-y-1"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
               >
-                <div className="flex items-start justify-between mb-6">
-                  <skill.icon className="w-5 h-5" strokeWidth={1.5} />
-                  <span className="text-[11px] font-mono text-muted-foreground">
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-10 h-10 rounded-lg bg-foreground/5 border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-all duration-300">
+                    <skill.icon className="w-4.5 h-4.5" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-[11px] font-mono text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity">
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="font-display font-bold text-base md:text-lg mb-2 uppercase tracking-tight">
+                <h3 className="font-display font-bold text-base md:text-lg mb-2.5 uppercase tracking-tight">
                   {skill.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">

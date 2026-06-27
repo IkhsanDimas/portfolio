@@ -51,13 +51,13 @@ export const translations: Translations = {
   
   // About Skills
   "about.webDev": { id: "Web Development", en: "Web Development" },
-  "about.webDevDesc": { id: "React, TypeScript, dan teknologi modern untuk web yang responsif", en: "React, TypeScript, and modern tech for responsive web" },
+  "about.webDevDesc": { id: "Merancang antarmuka web interaktif dengan React, TypeScript, dan Next.js yang cepat dan responsif", en: "Building interactive web interfaces with React, TypeScript, and Next.js that are fast and responsive" },
   "about.uiux": { id: "UI/UX Design", en: "UI/UX Design" },
-  "about.uiuxDesc": { id: "Desain intuitif yang mengutamakan kenyamanan pengguna", en: "Intuitive design that prioritizes user comfort" },
+  "about.uiuxDesc": { id: "Membangun pengalaman pengguna yang intuitif dengan perhatian pada detail visual dan aksesibilitas", en: "Crafting intuitive user experiences with attention to visual detail and accessibility" },
   "about.backend": { id: "Backend Development", en: "Backend Development" },
-  "about.backendDesc": { id: "API dan sistem backend yang cepat dan handal", en: "Fast and reliable API and backend systems" },
+  "about.backendDesc": { id: "Mengembangkan API dan arsitektur backend yang skalabel menggunakan Laravel, FastAPI, dan Supabase", en: "Developing scalable APIs and backend architecture using Laravel, FastAPI, and Supabase" },
   "about.problemSolving": { id: "Problem Solving", en: "Problem Solving" },
-  "about.problemSolvingDesc": { id: "Solusi kreatif untuk tantangan teknis yang kompleks", en: "Creative solutions for complex technical challenges" },
+  "about.problemSolvingDesc": { id: "Menganalisis dan memecahkan permasalahan teknis kompleks dengan pendekatan yang terstruktur dan efisien", en: "Analyzing and solving complex technical problems with a structured and efficient approach" },
 
   // Skills
   "skills.title": { id: "Keahlian", en: "Skills" },

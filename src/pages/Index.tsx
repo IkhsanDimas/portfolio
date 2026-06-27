@@ -42,14 +42,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           {/* Top row: eyebrow */}
           <motion.div
-            className="mb-8 md:mb-10 flex flex-wrap items-center gap-x-6 gap-y-2"
+            className="mb-8 md:mb-10 flex flex-wrap items-center gap-x-5 gap-y-3"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <p className="eyebrow">{t("hero.introEyebrow")}</p>
-            <span className="h-px w-10 bg-border hidden sm:block" />
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <span className="h-px w-8 bg-border hidden sm:block" />
+            <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground" />

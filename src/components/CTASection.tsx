@@ -77,7 +77,7 @@ const CTASection = () => {
 
           {/* Actions */}
           <motion.div
-            className="relative flex flex-wrap items-center gap-3 md:gap-4"
+            className="relative flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 md:gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ const CTASection = () => {
               </span>
             </button>
 
-            <div className="flex items-center gap-2 ml-auto">
+            <div className="flex items-center gap-2 sm:ml-auto">
               <span className="text-[10px] uppercase tracking-[0.22em] opacity-60">
                 {t("cta.connectOn")}
               </span>

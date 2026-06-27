@@ -144,11 +144,11 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden py-4 border-t border-border"
+              className="md:hidden py-4 border-t border-border bg-background shadow-lg rounded-b-xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
             >
               <div className="flex flex-col gap-1">
                 {navLinks.map((link) => (
