@@ -25,13 +25,6 @@ const AnimatedCounter = ({ target, suffix = "" }: { target: number; suffix?: str
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
-const skillAccents = [
-  { border: "border-l-blue-500", iconBg: "bg-blue-500/10", iconColor: "text-blue-600 dark:text-blue-400" },
-  { border: "border-l-violet-500", iconBg: "bg-violet-500/10", iconColor: "text-violet-600 dark:text-violet-400" },
-  { border: "border-l-emerald-500", iconBg: "bg-emerald-500/10", iconColor: "text-emerald-600 dark:text-emerald-400" },
-  { border: "border-l-amber-500", iconBg: "bg-amber-500/10", iconColor: "text-amber-600 dark:text-amber-400" },
-];
-
 const AboutSection = () => {
   const { t } = useLanguage();
 
@@ -118,34 +111,31 @@ const AboutSection = () => {
           </motion.div>
 
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-3 md:gap-4">
-            {skills.map((skill, index) => {
-              const accent = skillAccents[index];
-              return (
-                <motion.div
-                  key={index}
-                  className={`p-6 md:p-8 relative group rounded-xl border border-border border-l-[3px] ${accent.border} bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:border-border`}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
-                >
-                  <div className="flex items-start justify-between mb-5">
-                    <div className={`w-11 h-11 rounded-xl ${accent.iconBg} flex items-center justify-center transition-all duration-300`}>
-                      <skill.icon className={`w-5 h-5 ${accent.iconColor}`} strokeWidth={1.5} />
-                    </div>
-                    <span className="text-[11px] font-mono text-muted-foreground/40 group-hover:text-muted-foreground transition-all">
-                      0{index + 1}
-                    </span>
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                className="p-6 md:p-8 relative group rounded-xl border border-border bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 hover:border-foreground/20"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-foreground/5 text-foreground flex items-center justify-center transition-all duration-300 group-hover:bg-foreground group-hover:text-background border border-transparent group-hover:border-foreground">
+                    <skill.icon className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-display font-bold text-base md:text-lg mb-2.5 tracking-tight">
-                    {skill.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {skill.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+                  <span className="text-[11px] font-mono text-muted-foreground/40 group-hover:text-muted-foreground transition-all">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="font-display font-bold text-base md:text-lg mb-2.5 tracking-tight">
+                  {skill.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {skill.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

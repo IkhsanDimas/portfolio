@@ -27,9 +27,6 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Rotating circular badge text
-  const badgeText = "AVAILABLE FOR COLLABORATION  •  OPEN TO INTERNSHIP  •  ";
-
   return (
     <div className="min-h-screen bg-background">
       {/* Scroll progress */}
@@ -97,7 +94,7 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* Right — profile photo with rotating stamp (5 cols) */}
+            {/* Right — profile photo (5 cols) */}
             <motion.div
               className="md:col-span-5 relative"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -116,28 +113,6 @@ const Index = () => {
                 {/* Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent" />
 
-                {/* Rotating circular badge */}
-                <div className="absolute bottom-5 left-5 md:bottom-6 md:left-6 w-20 h-20 md:w-24 md:h-24 pointer-events-none">
-                  <svg viewBox="0 0 100 100" className="w-full h-full rotating-badge">
-                    <defs>
-                      <path
-                        id="badge-path"
-                        d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
-                      />
-                    </defs>
-                    <text fontSize="9" fontWeight="700" letterSpacing="1" fill="white">
-                      <textPath href="#badge-path" startOffset="0">
-                        {badgeText}
-                      </textPath>
-                    </text>
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-background text-foreground flex items-center justify-center">
-                      <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
-                    </div>
-                  </div>
-                </div>
-
                 {/* Role tag top-right */}
                 <div className="absolute top-5 right-5 text-right text-zinc-900">
                   <p className="text-[10px] uppercase tracking-[0.22em] opacity-70">
@@ -152,26 +127,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Marquee ticker */}
-      <div className="border-y border-border py-4 md:py-5 overflow-hidden bg-background w-full">
-        <div className="marquee">
-          <div className="marquee-track whitespace-nowrap display-lg text-2xl md:text-4xl">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <span key={i} className="inline-flex items-center gap-8 pr-8">
-                <span>{t("marquee.build")}</span>
-                <span className="opacity-40">✦</span>
-                <span>{t("marquee.design")}</span>
-                <span className="opacity-40">✦</span>
-                <span>{t("marquee.learn")}</span>
-                <span className="opacity-40">✦</span>
-                <span>{t("marquee.collaborate")}</span>
-                <span className="opacity-40">✦</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Main content */}
       <main className="relative z-10">

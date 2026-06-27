@@ -30,7 +30,7 @@ export const translations: Translations = {
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
   "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
-  "hero.introEyebrow": { id: "Saya Merancang & Membangun", en: "I Design & Build" },
+  "hero.introEyebrow": { id: "Full Stack Developer", en: "Full Stack Developer" },
   "hero.headline1": { id: "Ayo Bangun", en: "Let's Build" },
   "hero.headline2": { id: "Solusi Digital", en: "Digital Solutions" },
   "hero.headline3": { id: "Bersama Saya", en: "Together" },
