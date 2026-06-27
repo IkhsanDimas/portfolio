@@ -21,10 +21,13 @@ const NotFound = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-3 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+          style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
         >
-          <ArrowLeft className="w-4 h-4" />
           {t("notFound.returnHome")}
+          <span className="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+          </span>
         </Link>
       </div>
     </div>

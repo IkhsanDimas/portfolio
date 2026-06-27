@@ -33,7 +33,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
               {this.state.error?.message || 'An unexpected error occurred'}
             </p>
             <button
-              className="px-4 py-2 bg-primary text-primary-foreground rounded"
+              className="inline-flex items-center gap-2 pl-5 pr-5 py-3 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
+              style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
               onClick={() => window.location.reload()}
             >
               Reload Page
