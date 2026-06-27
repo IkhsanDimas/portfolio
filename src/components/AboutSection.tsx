@@ -1,38 +1,9 @@
 import { Code2, Palette, Database, Lightbulb } from "lucide-react";
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const AnimatedCounter = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 1400;
-    const step = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [isInView, target]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-};
 
 const AboutSection = () => {
   const { t } = useLanguage();
-
-  const stats = [
-    { value: 5, suffix: "+", label: t("about.stat.projects") },
-    { value: 6, suffix: "+", label: t("about.stat.technologies") },
-    { value: 2, suffix: "mo", label: t("about.stat.internship") },
-  ];
 
   const skills = [
     { icon: Code2, title: t("about.webDev"), description: t("about.webDevDesc") },
@@ -63,31 +34,6 @@ const AboutSection = () => {
               {t("about.lead")}
             </p>
           </div>
-        </motion.div>
-
-        {/* Stats row */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 gap-0 mb-16 md:mb-20 border-y border-border"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`py-8 md:py-10 px-4 md:px-6 ${
-                index !== 0 ? "md:border-l border-border" : ""
-              } ${index === 2 ? "col-span-2 md:col-span-1 border-t md:border-t-0 border-border" : ""}`}
-            >
-              <div className="display-lg text-3xl md:text-4xl mb-1">
-                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-              </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {stat.label}
-              </p>
-            </div>
-          ))}
         </motion.div>
 
         {/* Bio + skill grid */}

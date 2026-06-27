@@ -319,63 +319,6 @@ const ProjectsSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Below-grid action list */}
-        <div className="mt-12 md:mt-16 border-t border-border">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              className="border-b border-border py-5 md:py-6 grid grid-cols-12 items-center gap-3 md:gap-6 hover:bg-secondary transition-colors px-3 md:px-4 -mx-3 md:-mx-4 rounded-md"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-            >
-              <span className="col-span-2 md:col-span-1 text-xs font-mono text-muted-foreground">
-                0{idx + 1}
-              </span>
-              <div className="col-span-10 md:col-span-4">
-                <p className="font-display font-bold uppercase text-sm md:text-base tracking-tight">
-                  {project.title}
-                </p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">
-                  {t(`project.${project.id}.category`)}
-                </p>
-              </div>
-              <div className="col-span-7 md:col-span-4 hidden md:flex flex-wrap gap-1.5">
-                {project.tags.slice(0, 4).map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-muted-foreground border border-border rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <p className="col-span-3 md:col-span-1 text-xs text-muted-foreground text-right">
-                {project.year}
-              </p>
-              <div className="col-span-12 md:col-span-2 flex md:justify-end gap-2 mt-2 md:mt-0">
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.18em] border border-border rounded-full px-3 py-1.5 hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
-                  >
-                    <ExternalLink className="w-3 h-3" /> {t("projects.live")}
-                  </a>
-                )}
-                <Link
-                  to={`/project/${project.id}`}
-                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.18em] border border-border rounded-full px-3 py-1.5 hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
-                >
-                  {t("projects.detail")} <ArrowUpRight className="w-3 h-3" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
