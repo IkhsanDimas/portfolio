@@ -318,7 +318,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
   return (
     <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground border border-border">
       <OptimizedImage src={project.image} alt={project.title} className="w-full h-full" loading="lazy" />
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent" />
 
       <div className="absolute top-4 left-4 text-background">
         <p className="text-[11px] font-mono uppercase tracking-[0.2em] opacity-80">
@@ -330,9 +330,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         <p className="text-[10px] uppercase tracking-[0.22em] opacity-70 mb-1">
           {t(`project.${project.id}.category`)} &middot; {project.year}
         </p>
-        <h3 className="display-lg text-xl md:text-2xl group-hover:underline underline-offset-4 decoration-2">
+        <h3 className="display-lg text-xl md:text-2xl group-hover:underline underline-offset-4 decoration-2 mb-2">
           {project.title}
         </h3>
+        <p className="text-[11px] md:text-xs text-background/70 leading-relaxed line-clamp-2">
+          {t(`project.${project.id}.description`)}
+        </p>
       </div>
     </div>
   );
