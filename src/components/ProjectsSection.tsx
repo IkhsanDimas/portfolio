@@ -301,20 +301,9 @@ const ProjectsSection = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.1 + index * 0.08 }}
               >
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block group"
-                  >
-                    <ProjectCard project={project} index={index + 1} />
-                  </a>
-                ) : (
-                  <Link to={`/project/${project.id}`} className="block group">
-                    <ProjectCard project={project} index={index + 1} />
-                  </Link>
-                )}
+                <Link to={`/project/${project.id}`} className="block group">
+                  <ProjectCard project={project} index={index + 1} />
+                </Link>
               </motion.div>
             ))}
           </div>

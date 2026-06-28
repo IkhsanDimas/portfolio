@@ -13,14 +13,32 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    document.title = "Ikhsan Dimastianto | Portfolio";
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', t("footer.description"));
+  }, [language, t]);
+
+  useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+          setScrollProgress(progress);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -66,7 +84,9 @@ const Index = () => {
                 <h1 className="display-xl text-[clamp(2.5rem,10vw,7rem)] leading-[0.9] mb-6 md:mb-8">
                   {t("hero.headline1")}
                   <br />
-                  {t("hero.headline2")}
+                  <span style={{ WebkitTextStroke: "1px hsl(var(--foreground))", color: "transparent" }}>
+                    {t("hero.headline2")}
+                  </span>
                   <br />
                   {t("hero.headline3")}
                 </h1>

@@ -12,11 +12,24 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const projectImages = project?.images || (project ? [project.image] : []);
 
   const [autoplayActive, setAutoplayActive] = useState(true);
+
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} | Ikhsan Dimastianto`;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', t(`project.${project.id}.description`));
+    }
+  }, [id, language, project, t]);
 
   useEffect(() => {
     if (projectImages.length <= 1 || !autoplayActive) return;

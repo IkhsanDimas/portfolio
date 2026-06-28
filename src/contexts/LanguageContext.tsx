@@ -79,6 +79,7 @@ export const translations: Translations = {
 
   // CTA Section
   "cta.chatWhatsApp": { id: "Chat WhatsApp", en: "Chat on WhatsApp" },
+  "contact.whatsappMessage": { id: "Halo Ikhsan! Saya tertarik dengan portfolio Anda dan ingin berdiskusi.", en: "Hello Ikhsan! I am interested in your portfolio and would love to chat." },
 
   // Experience
   "experience.title": { id: "Pengalaman", en: "Internship" },
@@ -87,8 +88,11 @@ export const translations: Translations = {
   "experience.p1": { id: "Selama 2 bulan menjalani Kerja Praktik di Kejaksaan Tinggi Kepulauan Riau, saya berkontribusi membangun sistem DASKRIMTI — Dashboard Kriminalitas Terpadu yang mencakup CMS data perkara, dashboard absensi, dan portal login terpusat.", en: "During my 2-month internship at Kejaksaan Tinggi Kepulauan Riau, I contributed to building DASKRIMTI — an integrated criminal dashboard system including case data CMS, attendance dashboard, and centralized login portal." },
   "experience.p2": { id: "Saya berkesempatan mempresentasikan hasil projek langsung kepada tim Kejaksaan, menunjukkan fitur-fitur sistem yang telah kami bangun dan implementasikan.", en: "I had the opportunity to present the project results directly to the Prosecution team, demonstrating the system features we built and implemented." },
   "experience.institution": { id: "Institusi", en: "Institution" },
+  "experience.institutionValue": { id: "Kejaksaan Tinggi Kepulauan Riau", en: "High Prosecutor's Office of Riau Islands" },
   "experience.duration": { id: "Durasi", en: "Duration" },
+  "experience.durationValue": { id: "Jan 2026 — Mar 2026", en: "Jan 2026 — Mar 2026" },
   "experience.role": { id: "Posisi", en: "Role" },
+  "experience.roleValue": { id: "Web Developer Intern", en: "Web Developer Intern" },
   "experience.certificateTitle": { id: "Sertifikat Magang", en: "Internship Certificate" },
   "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
   "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },

@@ -162,6 +162,14 @@
     letter-spacing: 0.18em;
   }
 
+  @media (max-w: 640px) {
+    .accent-chip {
+      padding: 0.25rem 0.65rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+    }
+  }
+
   .dark .accent-chip {
     background: hsl(var(--highlight) / 0.12);
     border-color: hsl(var(--highlight) / 0.3);

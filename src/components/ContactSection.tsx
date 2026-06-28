@@ -31,7 +31,7 @@ const ContactSection = () => {
       icon: MapPin,
       label: t("contact.location"),
       value: t("hero.location"),
-      href: "#",
+      href: "https://maps.google.com/?q=Tanjungpinang,+Kepulauan+Riau",
     },
   ];
 
@@ -44,7 +44,7 @@ const ContactSection = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "4698293d-4688-4b07-ae0d-18273a1cf89d",
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY || "4698293d-4688-4b07-ae0d-18273a1cf89d",
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -137,7 +137,7 @@ const ContactSection = () => {
             {/* WhatsApp CTA */}
             <div className="pt-6">
               <button
-                onClick={() => window.open("https://wa.me/6283165359785?text=Halo%20Ikhsan!%20Saya%20tertarik%20dengan%20portfolio%20Anda.", "_blank", "noopener,noreferrer")}
+                onClick={() => window.open(`https://wa.me/6283165359785?text=${encodeURIComponent(t("contact.whatsappMessage"))}`, "_blank", "noopener,noreferrer")}
                 className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
                 style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
               >

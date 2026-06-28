@@ -98,9 +98,9 @@ const ExperienceSection = () => {
               transition={{ duration: 0.6 }}
             >
               {[
-                { label: t("experience.institution"), value: "Kejaksaan Tinggi Kepri" },
-                { label: t("experience.duration"), value: "Jan 2026 — Mar 2026" },
-                { label: t("experience.role"), value: "Web Developer Intern" },
+                { label: t("experience.institution"), value: t("experience.institutionValue") },
+                { label: t("experience.duration"), value: t("experience.durationValue") },
+                { label: t("experience.role"), value: t("experience.roleValue") },
               ].map((item) => (
                 <div
                   key={item.label}
