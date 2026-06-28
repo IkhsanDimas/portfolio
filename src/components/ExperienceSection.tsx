@@ -4,10 +4,12 @@ import { Building2, Award, X, ZoomIn } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import presentasi1 from "@/assets/Prensetasi1.jpeg";
 import sertifikat from "@/assets/sertifikat.jpeg";
+import googleCertificate from "@/assets/google-certificate.png";
 
 const ExperienceSection = () => {
   const { t } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeCert, setActiveCert] = useState<"internship" | "google">("internship");
 
   const openCertificate = useCallback(() => setLightboxOpen(true), []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -143,10 +145,34 @@ const ExperienceSection = () => {
                   <div className="flex items-center gap-2">
                     <Award className="w-4 h-4" />
                     <h3 className="text-[11px] uppercase tracking-[0.22em] font-bold">
-                      {t("experience.certificateTitle")}
+                      {activeCert === "internship" ? t("experience.certificateTitle") : t("experience.googleCertTitle")}
                     </h3>
                   </div>
                   <span className="text-[10px] font-mono text-muted-foreground">2026</span>
+                </div>
+
+                {/* Toggle Tabs */}
+                <div className="flex gap-1 p-0.5 rounded-lg bg-secondary border border-border text-[9px] font-bold uppercase tracking-wider">
+                  <button
+                    onClick={() => setActiveCert("internship")}
+                    className={`flex-1 py-1.5 rounded transition-all ${
+                      activeCert === "internship"
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {t("experience.tabInternship")}
+                  </button>
+                  <button
+                    onClick={() => setActiveCert("google")}
+                    className={`flex-1 py-1.5 rounded transition-all ${
+                      activeCert === "google"
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    Google AI
+                  </button>
                 </div>
 
                 <motion.div
@@ -157,8 +183,8 @@ const ExperienceSection = () => {
                 >
                   <div className="absolute -inset-[1px] bg-foreground/5 rounded-lg animate-certificate-glow pointer-events-none" />
                   <img
-                    src={sertifikat}
-                    alt="Sertifikat Magang"
+                    src={activeCert === "internship" ? sertifikat : googleCertificate}
+                    alt={activeCert === "internship" ? "Sertifikat Magang" : "Sertifikat Google AI"}
                     className="relative w-full h-auto object-contain photo-mono"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-foreground/40">
@@ -169,7 +195,7 @@ const ExperienceSection = () => {
                 </motion.div>
 
                 <p className="text-[11px] text-muted-foreground leading-relaxed">
-                  {t("experience.certificateDesc")}
+                  {activeCert === "internship" ? t("experience.certificateDesc") : t("experience.googleCertDesc")}
                 </p>
               </div>
             </motion.div>
@@ -216,8 +242,8 @@ const ExperienceSection = () => {
             </motion.p>
 
             <motion.img
-              src={sertifikat}
-              alt="Sertifikat Magang"
+              src={activeCert === "internship" ? sertifikat : googleCertificate}
+              alt={activeCert === "internship" ? "Sertifikat Magang" : "Sertifikat Google AI"}
               className="relative z-[1] max-w-[92vw] max-h-[88vh] object-contain rounded-xl shadow-2xl"
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
