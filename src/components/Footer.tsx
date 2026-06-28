@@ -10,7 +10,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, url: "https://github.com/IkhsanDimas", label: "GitHub" },
-    { icon: Linkedin, url: "https://linkedin.com/in/ikhsan-dimastianto", label: "LinkedIn" },
+    { icon: Linkedin, url: "https://linkedin.com/in/ikhsan-dimastianto-4994ab3a8", label: "LinkedIn" },
     { icon: Mail, url: "mailto:ikhsandimastianto@gmail.com", label: "Email" },
   ];
 
