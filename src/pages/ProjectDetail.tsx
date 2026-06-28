@@ -74,26 +74,16 @@ const ProjectDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="md:col-span-8">
+            <div className="md:col-span-12">
               <p className="eyebrow mb-4">
                 {t(`project.${project.id}.category`) || t("projectDetail.category")} &middot; {project.year || ""}
               </p>
               <h1 className="display-lg text-[clamp(2rem,7vw,5rem)] mb-4">
                 {project.title}
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-4xl">
                 {t(`project.${project.id}.fullDescription`)}
               </p>
-            </div>
-            <div className="md:col-span-4 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-[10px] font-mono uppercase tracking-wider border border-border rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
             </div>
           </motion.div>
 
