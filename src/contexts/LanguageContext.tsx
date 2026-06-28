@@ -39,11 +39,11 @@ export const translations: Translations = {
   
   // About Skills
   "about.webDev": { id: "Web Development", en: "Web Development" },
-  "about.webDevDesc": { id: "Merancang antarmuka web interaktif dengan React, TypeScript, dan Next.js yang cepat dan responsif", en: "Building interactive web interfaces with React, TypeScript, and Next.js that are fast and responsive" },
+  "about.webDevDesc": { id: "Merekayasa halaman web yang cepat, responsif, dan interaktif guna memastikan navigasi pengguna berjalan dengan lancar.", en: "Engineering fast, responsive, and interactive web pages to ensure smooth user navigation." },
   "about.uiux": { id: "UI/UX Design", en: "UI/UX Design" },
   "about.uiuxDesc": { id: "Membangun pengalaman pengguna yang intuitif dengan perhatian pada detail visual dan aksesibilitas", en: "Crafting intuitive user experiences with attention to visual detail and accessibility" },
   "about.backend": { id: "Backend Development", en: "Backend Development" },
-  "about.backendDesc": { id: "Mengembangkan API dan arsitektur backend yang skalabel menggunakan Laravel, FastAPI, dan Supabase", en: "Developing scalable APIs and backend architecture using Laravel, FastAPI, and Supabase" },
+  "about.backendDesc": { id: "Mengarahkan rekayasa server untuk menjamin kestabilan pemrosesan data dan skalabilitas sistem jangka panjang.", en: "Engineering server-side systems to ensure stable data processing and long-term system scalability." },
   "about.problemSolving": { id: "Problem Solving", en: "Problem Solving" },
   "about.problemSolvingDesc": { id: "Menganalisis dan memecahkan permasalahan teknis kompleks dengan pendekatan yang terstruktur dan efisien", en: "Analyzing and solving complex technical problems with a structured and efficient approach" },
 
@@ -104,7 +104,7 @@ export const translations: Translations = {
   "footer.navigate": { id: "Navigasi", en: "Navigate" },
   "footer.connect": { id: "Terhubung", en: "Connect" },
   "footer.backToTop": { id: "Kembali ke Atas", en: "Back to Top" },
-  "footer.description": { id: "Membangun aplikasi web yang bersih, terukur, dan bermanfaat. Saat ini fokus pada ekosistem React, TypeScript, dan Supabase.", en: "Building clean, scalable, and impactful web applications. Currently focused on the React, TypeScript, and Supabase ecosystem." },
+  "footer.description": { id: "Mendedikasikan keterampilan rekayasa untuk membangun platform digital yang bersih, responsif, dan mudah dikelola.", en: "Dedicated to engineering digital platforms that are clean, responsive, and easy to maintain." },
   "footer.subtitle": { id: "Full Stack Developer", en: "Full Stack Developer" },
   "footer.linkAbout": { id: "Tentang", en: "About" },
   "footer.linkExperience": { id: "Pengalaman", en: "Experience" },
