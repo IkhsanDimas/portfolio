@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 type Language = "id" | "en";
 
@@ -19,22 +19,15 @@ export const translations: Translations = {
   "nav.letsTalk": { id: "Mari Bicara", en: "Let's Talk" },
 
   // Hero
-  "hero.greeting": { id: "Halo, Saya", en: "Hi, I'm" },
-  "hero.name": { id: "Ikhsan Dimastianto", en: "Ikhsan Dimastianto" },
   "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
-  "hero.student": { id: "Developer", en: "Developer" },
-  "hero.major": { id: "Developer", en: "Developer" },
   "hero.description": { id: "Sebagai Full Stack Developer, saya senang merancang database di belakang layar sekaligus membangun antarmuka interaktif yang nyaman di depan layar untuk menciptakan sistem web yang utuh.", en: "As a Full Stack Developer, I love structuring databases behind the scenes and building comfortable, interactive interfaces to create complete web systems." },
-  "hero.tagline": { id: "Belajar, Membangun, dan Terus Berkembang", en: "Learning, Building, and Growing" },
   "hero.location": { id: "Tanjungpinang, Kepulauan Riau, Indonesia", en: "Tanjungpinang, Riau Islands, Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
-  "hero.contactMe": { id: "Hubungi Saya", en: "Contact Me" },
   "hero.introEyebrow": { id: "Full Stack Developer", en: "Full Stack Developer" },
   "hero.headline1": { id: "Membangun", en: "Building" },
   "hero.headline2": { id: "Sistem Web", en: "Modern Web" },
   "hero.headline3": { id: "Modern", en: "Systems" },
-  "hero.role": { id: "Full Stack", en: "Full Stack" },
 
 
   // About
@@ -63,8 +56,6 @@ export const translations: Translations = {
   "projects.title": { id: "Proyek", en: "Selected" },
   "projects.titleHighlight": { id: "Terbaru", en: "Work" },
   "projects.description": { id: "Beberapa proyek yang telah saya kerjakan untuk mengasah kemampuan dan kreativitas", en: "A few projects I've built to sharpen my skills and creativity" },
-  "projects.liveDemo": { id: "Live Demo", en: "Live Demo" },
-  "projects.viewDetail": { id: "Lihat Detail", en: "View Detail" },
   "projects.requestProject": { id: "Punya Proyek?  Ayo Bicara", en: "Have a Project?  Let's Talk" },
 
   // Contact
@@ -87,16 +78,9 @@ export const translations: Translations = {
   "contact.errorGeneral": { id: "Terjadi kesalahan. Silakan coba lagi.", en: "An error occurred. Please try again." },
 
   // CTA Section
-  "cta.eyebrow": { id: "Mari Bekerja Sama", en: "Let's Work Together" },
-  "cta.title": { id: "Tertarik Bekerja Sama?", en: "Interested to Work Together?" },
-  "cta.headline1": { id: "Mulai", en: "Start Your" },
-  "cta.headline2": { id: "Proyek Anda", en: "Next Project" },
-  "cta.description": { id: "Saya terbuka untuk peluang freelance, magang, atau kolaborasi proyek. Ceritakan ide Anda, kita diskusikan bersama.", en: "I'm open to freelance opportunities, internships, or project collaborations. Share your idea and let's discuss it together." },
   "cta.chatWhatsApp": { id: "Chat WhatsApp", en: "Chat on WhatsApp" },
-  "cta.connectOn": { id: "Terhubung di", en: "Connect on" },
 
   // Experience
-  "experience.label": { id: "Pengalaman", en: "Experience" },
   "experience.title": { id: "Pengalaman", en: "Internship" },
   "experience.subtitle": { id: "Magang", en: "Experience" },
   "experience.description": { id: "Pengalaman kerja praktik yang membentuk kemampuan teknis dan profesionalisme saya di dunia nyata", en: "Real-world internship experience that shaped my technical skills and professionalism" },
@@ -107,23 +91,16 @@ export const translations: Translations = {
   "experience.role": { id: "Posisi", en: "Role" },
   "experience.certificateTitle": { id: "Sertifikat Magang", en: "Internship Certificate" },
   "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
-  "experience.photoCaption2": { id: "Demo Sistem kepada Tim Kejaksaan", en: "System Demo to Prosecution Team" },
-  "experience.clickToZoom": { id: "Klik untuk perbesar", en: "Click to zoom" },
   "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },
   "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
 
   // Navbar
   "nav.subtitle": { id: "Full Stack Developer", en: "Full Stack Developer" },
 
-  // About eyebrow & stats
   "about.eyebrow": { id: "01 / Tentang", en: "01 / About" },
-  "about.stat.projects": { id: "Proyek Terselesaikan", en: "Projects Shipped" },
-  "about.stat.technologies": { id: "Teknologi Dikuasai", en: "Technologies Mastered" },
-  "about.stat.internship": { id: "Pengalaman Magang", en: "Internship Experience" },
 
   // Footer
   "footer.copyright": { id: `© ${new Date().getFullYear()} Ikhsan Dimastianto. Hak Cipta Dilindungi.`, en: `© ${new Date().getFullYear()} Ikhsan Dimastianto. All Rights Reserved.` },
-  "footer.tagline": { id: "Dirancang & dikembangkan dengan dedikasi", en: "Designed & developed with dedication" },
   "footer.navigate": { id: "Navigasi", en: "Navigate" },
   "footer.connect": { id: "Terhubung", en: "Connect" },
   "footer.backToTop": { id: "Kembali ke Atas", en: "Back to Top" },
@@ -161,8 +138,6 @@ export const translations: Translations = {
 
   // Projects Section
   "projects.featured": { id: "Unggulan", en: "Featured" },
-  "projects.live": { id: "Live", en: "Live" },
-  "projects.detail": { id: "Detail", en: "Detail" },
 
   // Experience Section
   "experience.badge": { id: "Kerja Praktik 2026", en: "Internship 2026" },
@@ -260,6 +235,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
   };
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

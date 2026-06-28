@@ -14,9 +14,10 @@ const LanguageToggle = () => {
       variant="ghost"
       size="icon"
       onClick={toggleLanguage}
+      className="rounded-full hover:bg-secondary h-9 w-9"
       title={language === "id" ? "Switch to English" : "Ganti ke Indonesia"}
     >
-      <Globe className="h-5 w-5" />
+      <Globe className="h-5 w-5 text-foreground" />
     </Button>
   );
 };

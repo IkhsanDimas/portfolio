@@ -167,13 +167,6 @@
     border-color: hsl(var(--highlight) / 0.3);
   }
 
-  /* gradient-text kept as alias for solid ink — prevents regression in components
-     that already reference the class, but renders as plain foreground color */
-  .gradient-text {
-    color: hsl(var(--foreground));
-    background: none;
-    -webkit-text-fill-color: hsl(var(--foreground));
-  }
 
 
   /* Divider between sections */
