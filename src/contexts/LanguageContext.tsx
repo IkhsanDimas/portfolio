@@ -19,15 +19,15 @@ export const translations: Translations = {
   "nav.letsTalk": { id: "Mari Bicara", en: "Let's Talk" },
 
   // Hero
-  "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
+  "hero.status": { id: "Terbuka untuk Magang & Proyek", en: "Open for Internships & Projects" },
   "hero.description": { id: "Sebagai Full Stack Developer, saya senang merancang database di belakang layar sekaligus membangun antarmuka interaktif yang nyaman di depan layar untuk menciptakan sistem web yang utuh.", en: "As a Full Stack Developer, I love structuring databases behind the scenes and building intuitive, interactive interfaces to create complete web systems." },
   "hero.location": { id: "Tanjungpinang, Kepulauan Riau, Indonesia", en: "Tanjungpinang, Riau Islands, Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
   "hero.introEyebrow": { id: "Full Stack Developer", en: "Full Stack Developer" },
-  "hero.headline1": { id: "Membangun", en: "Building" },
-  "hero.headline2": { id: "Sistem Web", en: "Modern Web" },
-  "hero.headline3": { id: "Modern", en: "Systems" },
+  "hero.headline1": { id: "Berpikir", en: "Think" },
+  "hero.headline2": { id: "Membangun", en: "Build" },
+  "hero.headline3": { id: "Meluncurkan", en: "Launch" },
 
 
   // About
