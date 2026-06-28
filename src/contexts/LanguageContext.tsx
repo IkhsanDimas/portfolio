@@ -20,7 +20,7 @@ export const translations: Translations = {
 
   // Hero
   "hero.status": { id: "Tersedia untuk Kolaborasi", en: "Available for Collaboration" },
-  "hero.description": { id: "Sebagai Full Stack Developer, saya senang merancang database di belakang layar sekaligus membangun antarmuka interaktif yang nyaman di depan layar untuk menciptakan sistem web yang utuh.", en: "As a Full Stack Developer, I love structuring databases behind the scenes and building comfortable, interactive interfaces to create complete web systems." },
+  "hero.description": { id: "Sebagai Full Stack Developer, saya senang merancang database di belakang layar sekaligus membangun antarmuka interaktif yang nyaman di depan layar untuk menciptakan sistem web yang utuh.", en: "As a Full Stack Developer, I love structuring databases behind the scenes and building intuitive, interactive interfaces to create complete web systems." },
   "hero.location": { id: "Tanjungpinang, Kepulauan Riau, Indonesia", en: "Tanjungpinang, Riau Islands, Indonesia" },
   "hero.basedIn": { id: "Berbasis di", en: "Based in" },
   "hero.viewProjects": { id: "Lihat Proyek", en: "View Projects" },
@@ -56,7 +56,7 @@ export const translations: Translations = {
   "projects.title": { id: "Proyek", en: "Selected" },
   "projects.titleHighlight": { id: "Terbaru", en: "Work" },
   "projects.description": { id: "Beberapa proyek yang telah saya kerjakan untuk mengasah kemampuan dan kreativitas", en: "A few projects I've built to sharpen my skills and creativity" },
-  "projects.requestProject": { id: "Punya Proyek?  Ayo Bicara", en: "Have a Project?  Let's Talk" },
+  "projects.requestProject": { id: "Punya Proyek? Ayo Bicara", en: "Have a Project? Let's Talk" },
 
   // Contact
   "contact.title": { id: "Hubungi", en: "Get In" },
@@ -141,7 +141,7 @@ export const translations: Translations = {
 
   // Experience Section
   "experience.badge": { id: "Kerja Praktik 2026", en: "Internship 2026" },
-  "experience.institutionName": { id: "Kejaksaan Tinggi Kepulauan Riau", en: "High Prosecution Office of Riau Islands" },
+  "experience.institutionName": { id: "Kejaksaan Tinggi Kepulauan Riau", en: "High Prosecutor's Office of Riau Islands" },
 
   // Contact Section
   "contact.sending": { id: "Mengirim...", en: "Sending..." },
@@ -157,7 +157,7 @@ export const translations: Translations = {
   "project.daskrimti.feature.1": { id: "Grafik Interaktif - Bar chart, line chart, treemap, dan donut chart menggunakan Chart.js", en: "Interactive Charts - Bar, line, treemap, and donut charts using Chart.js" },
   "project.daskrimti.feature.2": { id: "Smart Excel Parser - Admin panel yang membaca file Excel secara cerdas dengan deteksi format otomatis dan alias nama sheet", en: "Smart Excel Parser - Admin panel that intelligently parses Excel files with auto format detection and sheet name aliasing" },
   "project.daskrimti.feature.3": { id: "Sinkronisasi Realtime - Data tersimpan dan tersinkronisasi ke Supabase secara otomatis", en: "Real-time Sync - Data automatically saved and synchronized to Supabase" },
-  "project.daskrimti.feature.4": { id: "Dashboard Absensi 9 Bidang - Visualisasi kehadiran untuk Pembinaan, Intelijen, Pidum, Pidsus, Datun, Pengawasan, TU, Koordinator, dan Pemulihan Aset", en: "9-Department Attendance Dashboard - Visualizing attendance for Development, Intelligence, Crime, Civil, Supervision, Administration, Coordinator, and Asset Recovery departments" },
+  "project.daskrimti.feature.4": { id: "Dashboard Absensi 9 Bidang - Visualisasi kehadiran untuk Pembinaan, Intelijen, Pidum, Pidsus, Datun, Pengawasan, TU, Koordinator, dan Pemulihan Aset", en: "9-Department Attendance Dashboard - Visualizing attendance for Support & Administration, Intelligence, General Crimes, Special Crimes, Civil & State Administration, Internal Oversight, Administration, Coordinator, and Asset Recovery departments" },
   "project.daskrimti.feature.5": { id: "Filter Dinamis - Filter berdasarkan tahun, bulan, dan halaman dengan URL parameter", en: "Dynamic Filters - Filtering by year, month, and page via URL parameters" },
   "project.daskrimti.feature.6": { id: "Responsive Design - Tampilan optimal di desktop dan mobile untuk dashboard absensi", en: "Responsive Design - Optimized layout for desktop and mobile devices" },
   "project.daskrimti.feature.7": { id: "Portal Login Terpusat - Satu titik akses ke seluruh modul dashboard", en: "Centralized Login Portal - A single entry point for all dashboard modules" },
@@ -180,7 +180,7 @@ export const translations: Translations = {
   // Projects - Nega Chatbot AI
   "project.nega-chatbot.category": { id: "Produk Kecerdasan Buatan", en: "AI Product" },
   "project.nega-chatbot.description": { id: "Asisten virtual AI yang membantu berbagai tugas melalui percakapan interaktif, analisis dokumen, kolaborasi grup, dan fitur produktivitas.", en: "An AI virtual assistant that assists in various tasks through interactive conversations, document analysis, group collaboration, and productivity features." },
-  "project.nega-chatbot.fullDescription": { id: "Nega Chatbot AI adalah asisten virtual berbasis AI yang dibangun dengan teknologi modern. Powered by Gemini 2.5 Flash, chatbot ini dirancang untuk membantu pengguna dalam berbagai tugas melalui percakapan interaktif, analisis dokumen PDF & gambar, kolaborasi dalam grup chat, serta fitur produktivitas seperti voice input dan edit pesan.", en: "Nega Chatbot AI is an AI-powered virtual assistant built with modern technologies. Powered by Gemini 2.5 Flash, this chatbot is designed to assist users in various tasks through interactive chat, PDF and image analysis, group chat collaboration, and productivity features like voice input and message editing." },
+  "project.nega-chatbot.fullDescription": { id: "Nega Chatbot AI adalah asisten virtual berbasis AI yang dibangun dengan teknologi modern. Powered by Gemini 2.0 Flash, chatbot ini dirancang untuk membantu pengguna dalam berbagai tugas melalui percakapan interaktif, analisis dokumen PDF & gambar, kolaborasi dalam grup chat, serta fitur produktivitas seperti voice input dan edit pesan.", en: "Nega Chatbot AI is an AI-powered virtual assistant built with modern technologies. Powered by Gemini 2.0 Flash, this chatbot is designed to assist users in various tasks through interactive chat, PDF and image analysis, group chat collaboration, and productivity features like voice input and message editing." },
   "project.nega-chatbot.feature.0": { id: "Chat Realtime - Interaksi tanya jawab dengan AI yang cepat dan responsif", en: "Real-time Chat - Fast and responsive Q&A interaction with AI" },
   "project.nega-chatbot.feature.1": { id: "Voice Typing - Fitur dikte suara (Speech-to-Text) untuk mengetik tanpa keyboard", en: "Voice Typing - Speech-to-Text feature to type without a keyboard" },
   "project.nega-chatbot.feature.2": { id: "Upload Dokumen & Gambar - Mampu membaca dan menganalisis file PDF serta gambar", en: "Document & Image Upload - Reads and analyzes PDF files and images" },
