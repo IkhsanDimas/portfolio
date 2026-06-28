@@ -137,7 +137,7 @@ const ContactSection = () => {
             {/* WhatsApp CTA */}
             <div className="pt-6">
               <button
-                onClick={() => window.open("https://wa.me/6283165359785?text=Halo%20Ikhsan!%20Saya%20tertarik%20dengan%20portfolio%20Anda.", "_blank")}
+                onClick={() => window.open("https://wa.me/6283165359785?text=Halo%20Ikhsan!%20Saya%20tertarik%20dengan%20portfolio%20Anda.", "_blank", "noopener,noreferrer")}
                 className="group inline-flex items-center gap-2 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition-opacity"
                 style={{ background: 'hsl(var(--highlight))', color: 'hsl(var(--highlight-foreground))' }}
               >
