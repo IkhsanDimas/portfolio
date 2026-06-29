@@ -209,44 +209,44 @@ const ExperienceSection = () => {
                   <span className="text-[10px] font-mono text-muted-foreground">{getCertYear()}</span>
                 </div>
 
-                {/* Toggle Tabs (2x2 Grid) */}
-                <div className="grid grid-cols-2 gap-1 p-0.5 rounded-lg bg-secondary border border-border text-[9px] font-bold uppercase tracking-wider">
+                {/* Toggle Tabs (2x2 Grid with individual buttons) */}
+                <div className="grid grid-cols-2 gap-2 text-[9px] font-bold uppercase tracking-wider">
                   <button
                     onClick={() => setActiveCert("internship")}
-                    className={`py-1.5 rounded transition-all ${
+                    className={`py-2 px-3 rounded-lg text-center transition-all duration-200 ${
                       activeCert === "internship"
-                        ? "bg-background text-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-background text-foreground border border-border shadow-sm"
+                        : "bg-secondary/40 text-muted-foreground border border-border/40 hover:bg-secondary hover:text-foreground hover:border-border"
                     }`}
                   >
                     {t("experience.tabInternship")}
                   </button>
                   <button
                     onClick={() => setActiveCert("google")}
-                    className={`py-1.5 rounded transition-all ${
+                    className={`py-2 px-3 rounded-lg text-center transition-all duration-200 ${
                       activeCert === "google"
-                        ? "bg-background text-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-background text-foreground border border-border shadow-sm"
+                        : "bg-secondary/40 text-muted-foreground border border-border/40 hover:bg-secondary hover:text-foreground hover:border-border"
                     }`}
                   >
                     Google AI
                   </button>
                   <button
                     onClick={() => setActiveCert("sprintcamp")}
-                    className={`py-1.5 rounded transition-all ${
+                    className={`py-2 px-3 rounded-lg text-center transition-all duration-200 ${
                       activeCert === "sprintcamp"
-                        ? "bg-background text-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-background text-foreground border border-border shadow-sm"
+                        : "bg-secondary/40 text-muted-foreground border border-border/40 hover:bg-secondary hover:text-foreground hover:border-border"
                     }`}
                   >
                     Sprint Camp
                   </button>
                   <button
                     onClick={() => setActiveCert("microsoft")}
-                    className={`py-1.5 rounded transition-all ${
+                    className={`py-2 px-3 rounded-lg text-center transition-all duration-200 ${
                       activeCert === "microsoft"
-                        ? "bg-background text-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-background text-foreground border border-border shadow-sm"
+                        : "bg-secondary/40 text-muted-foreground border border-border/40 hover:bg-secondary hover:text-foreground hover:border-border"
                     }`}
                   >
                     Microsoft
