@@ -6,11 +6,12 @@ import presentasi1 from "@/assets/Prensetasi1.jpeg";
 import sertifikat from "@/assets/sertifikat.jpeg";
 import googleCertificate from "@/assets/google-certificate.png";
 import sprintcampCertificate from "@/assets/sprintcamp-certificate.png";
+import microsoftCertificate from "@/assets/microsoft-certificate.png";
 
 const ExperienceSection = () => {
   const { t } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [activeCert, setActiveCert] = useState<"internship" | "google" | "sprintcamp">("internship");
+  const [activeCert, setActiveCert] = useState<"internship" | "google" | "sprintcamp" | "microsoft">("internship");
 
   const openCertificate = useCallback(() => setLightboxOpen(true), []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
@@ -21,6 +22,8 @@ const ExperienceSection = () => {
         return googleCertificate;
       case "sprintcamp":
         return sprintcampCertificate;
+      case "microsoft":
+        return microsoftCertificate;
       case "internship":
       default:
         return sertifikat;
@@ -33,6 +36,8 @@ const ExperienceSection = () => {
         return t("experience.googleCertTitle");
       case "sprintcamp":
         return t("experience.sprintcampCertTitle");
+      case "microsoft":
+        return t("experience.microsoftCertTitle");
       case "internship":
       default:
         return t("experience.certificateTitle");
@@ -45,6 +50,8 @@ const ExperienceSection = () => {
         return t("experience.googleCertDesc");
       case "sprintcamp":
         return t("experience.sprintcampCertDesc");
+      case "microsoft":
+        return t("experience.microsoftCertDesc");
       case "internship":
       default:
         return t("experience.certificateDesc");
@@ -56,6 +63,8 @@ const ExperienceSection = () => {
       case "google":
         return "2026";
       case "sprintcamp":
+        return "2026";
+      case "microsoft":
         return "2026";
       case "internship":
       default:
@@ -200,11 +209,11 @@ const ExperienceSection = () => {
                   <span className="text-[10px] font-mono text-muted-foreground">{getCertYear()}</span>
                 </div>
 
-                {/* Toggle Tabs */}
-                <div className="flex gap-1 p-0.5 rounded-lg bg-secondary border border-border text-[9px] font-bold uppercase tracking-wider">
+                {/* Toggle Tabs (2x2 Grid) */}
+                <div className="grid grid-cols-2 gap-1 p-0.5 rounded-lg bg-secondary border border-border text-[9px] font-bold uppercase tracking-wider">
                   <button
                     onClick={() => setActiveCert("internship")}
-                    className={`flex-1 py-1.5 rounded transition-all ${
+                    className={`py-1.5 rounded transition-all ${
                       activeCert === "internship"
                         ? "bg-background text-foreground shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
@@ -214,7 +223,7 @@ const ExperienceSection = () => {
                   </button>
                   <button
                     onClick={() => setActiveCert("google")}
-                    className={`flex-1 py-1.5 rounded transition-all ${
+                    className={`py-1.5 rounded transition-all ${
                       activeCert === "google"
                         ? "bg-background text-foreground shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
@@ -224,13 +233,23 @@ const ExperienceSection = () => {
                   </button>
                   <button
                     onClick={() => setActiveCert("sprintcamp")}
-                    className={`flex-1 py-1.5 rounded transition-all ${
+                    className={`py-1.5 rounded transition-all ${
                       activeCert === "sprintcamp"
                         ? "bg-background text-foreground shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     Sprint Camp
+                  </button>
+                  <button
+                    onClick={() => setActiveCert("microsoft")}
+                    className={`py-1.5 rounded transition-all ${
+                      activeCert === "microsoft"
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    Microsoft
                   </button>
                 </div>
 
