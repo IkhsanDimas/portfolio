@@ -5,14 +5,63 @@ import { useState, useEffect, useCallback } from "react";
 import presentasi1 from "@/assets/Prensetasi1.jpeg";
 import sertifikat from "@/assets/sertifikat.jpeg";
 import googleCertificate from "@/assets/google-certificate.png";
+import sprintcampCertificate from "@/assets/sprintcamp-certificate.png";
 
 const ExperienceSection = () => {
   const { t } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [activeCert, setActiveCert] = useState<"internship" | "google">("internship");
+  const [activeCert, setActiveCert] = useState<"internship" | "google" | "sprintcamp">("internship");
 
   const openCertificate = useCallback(() => setLightboxOpen(true), []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+
+  const getCertImage = () => {
+    switch (activeCert) {
+      case "google":
+        return googleCertificate;
+      case "sprintcamp":
+        return sprintcampCertificate;
+      case "internship":
+      default:
+        return sertifikat;
+    }
+  };
+
+  const getCertTitle = () => {
+    switch (activeCert) {
+      case "google":
+        return t("experience.googleCertTitle");
+      case "sprintcamp":
+        return t("experience.sprintcampCertTitle");
+      case "internship":
+      default:
+        return t("experience.certificateTitle");
+    }
+  };
+
+  const getCertDesc = () => {
+    switch (activeCert) {
+      case "google":
+        return t("experience.googleCertDesc");
+      case "sprintcamp":
+        return t("experience.sprintcampCertDesc");
+      case "internship":
+      default:
+        return t("experience.certificateDesc");
+    }
+  };
+
+  const getCertYear = () => {
+    switch (activeCert) {
+      case "google":
+        return "2026";
+      case "sprintcamp":
+        return "2026";
+      case "internship":
+      default:
+        return "2026";
+    }
+  };
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -145,10 +194,10 @@ const ExperienceSection = () => {
                   <div className="flex items-center gap-2">
                     <Award className="w-4 h-4" />
                     <h3 className="text-[11px] uppercase tracking-[0.22em] font-bold">
-                      {activeCert === "internship" ? t("experience.certificateTitle") : t("experience.googleCertTitle")}
+                      {getCertTitle()}
                     </h3>
                   </div>
-                  <span className="text-[10px] font-mono text-muted-foreground">2026</span>
+                  <span className="text-[10px] font-mono text-muted-foreground">{getCertYear()}</span>
                 </div>
 
                 {/* Toggle Tabs */}
@@ -173,6 +222,16 @@ const ExperienceSection = () => {
                   >
                     Google AI
                   </button>
+                  <button
+                    onClick={() => setActiveCert("sprintcamp")}
+                    className={`flex-1 py-1.5 rounded transition-all ${
+                      activeCert === "sprintcamp"
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    Sprint Camp
+                  </button>
                 </div>
 
                 <motion.div
@@ -183,8 +242,8 @@ const ExperienceSection = () => {
                 >
                   <div className="absolute -inset-[1px] bg-foreground/5 rounded-lg animate-certificate-glow pointer-events-none" />
                   <img
-                    src={activeCert === "internship" ? sertifikat : googleCertificate}
-                    alt={activeCert === "internship" ? "Sertifikat Magang" : "Sertifikat Google AI"}
+                    src={getCertImage()}
+                    alt={getCertTitle()}
                     className="relative w-full h-auto object-contain photo-mono"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-foreground/40">
@@ -195,7 +254,7 @@ const ExperienceSection = () => {
                 </motion.div>
 
                 <p className="text-[11px] text-muted-foreground leading-relaxed">
-                  {activeCert === "internship" ? t("experience.certificateDesc") : t("experience.googleCertDesc")}
+                  {getCertDesc()}
                 </p>
               </div>
             </motion.div>
@@ -242,8 +301,8 @@ const ExperienceSection = () => {
             </motion.p>
 
             <motion.img
-              src={activeCert === "internship" ? sertifikat : googleCertificate}
-              alt={activeCert === "internship" ? "Sertifikat Magang" : "Sertifikat Google AI"}
+              src={getCertImage()}
+              alt={getCertTitle()}
               className="relative z-[1] max-w-[92vw] max-h-[88vh] object-contain rounded-xl shadow-2xl"
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

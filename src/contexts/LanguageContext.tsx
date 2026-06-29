@@ -97,6 +97,8 @@ export const translations: Translations = {
   "experience.tabInternship": { id: "Magang", en: "Internship" },
   "experience.googleCertTitle": { id: "Sertifikat Google", en: "Google Certificate" },
   "experience.googleCertDesc": { id: "Sertifikat kursus Google 'AI for App Building' via Coursera (Juni 2026)", en: "Google 'AI for App Building' course certificate via Coursera (June 2026)" },
+  "experience.sprintcampCertTitle": { id: "Sertifikat Penghargaan", en: "Certificate of Appreciation" },
+  "experience.sprintcampCertDesc": { id: "Sertifikat penghargaan atas kolaborasi dan dedikasi merancang solusi digital inovatif pada SPRINT CAMP 1.0 HMTI UMRAH (Mei 2026)", en: "Certificate of appreciation for collaboration and dedication in designing innovative digital solutions at HMTI UMRAH SPRINT CAMP 1.0 (May 2026)" },
   "experience.photoCaption1": { id: "Presentasi Projek DASKRIMTI", en: "DASKRIMTI Project Presentation" },
   "experience.certificateDesc": { id: "Sertifikat penyelesaian Kerja Praktik selama 2 bulan (12 Jan — 13 Mar 2026)", en: "Internship completion certificate for 2 months (12 Jan — 13 Mar 2026)" },
   "experience.pressEsc": { id: "Tekan ESC atau klik di luar untuk menutup", en: "Press ESC or click outside to close" },
