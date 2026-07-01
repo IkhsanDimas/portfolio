@@ -17,6 +17,7 @@ export const translations: Translations = {
   "nav.experience": { id: "Pengalaman", en: "Experience" },
   "nav.contact": { id: "Kontak", en: "Contact" },
   "nav.letsTalk": { id: "Mari Bicara", en: "Let's Talk" },
+  "metadata.title": { id: "Ikhsan Dimastianto | Portofolio", en: "Ikhsan Dimastianto | Portfolio" },
 
   // Hero
   "hero.status": { id: "Terbuka untuk Magang & Proyek", en: "Open for Internships & Projects" },

@@ -17,7 +17,7 @@ const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = "Ikhsan Dimastianto | Portfolio";
+    document.title = t("metadata.title");
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
@@ -26,6 +26,16 @@ const Index = () => {
     }
     metaDesc.setAttribute('content', t("footer.description"));
   }, [language, t]);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  }, []);
 
   useEffect(() => {
     let ticking = false;
