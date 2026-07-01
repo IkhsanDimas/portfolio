@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: "Dashboard Kriminalitas Terpadu untuk Kejaksaan Tinggi Kepulauan Riau. Sistem terintegrasi yang mencakup CMS pengelolaan data perkara pidana umum (8 halaman), dashboard absensi pegawai berbasis mobile dengan admin panel untuk upload data Excel, serta portal login terpusat.",
     fullDescription:
       "DASKRIMTI (Dashboard Kriminalitas Terpadu) adalah sistem informasi terintegrasi yang dibangun khusus untuk Kejaksaan Tinggi Kepulauan Riau. Sistem ini terdiri dari 3 komponen utama: (1) CMS Dashboard Pidana Umum — mengelola data 8 tahap perkara mulai dari Pra-Penuntutan, Penuntutan, Upaya Hukum, Eksekusi, Barang Bukti, Tindak Pidana Umum, Tindak Pidana Khusus, hingga Perdata & Tata Usaha Negara, dengan fitur grafik interaktif, filter dinamis, dan sinkronisasi data ke Supabase. (2) Dashboard Absensi Mobile — menampilkan data kehadiran 9 bidang kerja dengan visualisasi treemap, bar chart, dan donut chart, dilengkapi Admin Panel yang mampu membaca file Excel secara cerdas (smart parsing) dengan pengenalan alias nama sheet dan deteksi format otomatis. (3) Portal Login Terpusat — sebagai gerbang akses ke seluruh modul. Seluruh data tersinkronisasi secara realtime dengan Supabase sebagai backend.",
-    tags: ["HTML", "CSS", "JavaScript", "Supabase", "Chart.js", "SheetJS"],
+    tags: [],
     features: [
       "CMS 8 Halaman Perkara - Mengelola data Pra-Penuntutan, Penuntutan, Upaya Hukum, Eksekusi, Barang Bukti, dan lainnya",
       "Grafik Interaktif - Bar chart, line chart, treemap, dan donut chart menggunakan Chart.js",

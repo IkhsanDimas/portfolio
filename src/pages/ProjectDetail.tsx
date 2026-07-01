@@ -211,19 +211,21 @@ const ProjectDetail = () => {
               </div>
 
               {/* Tech stack */}
-              <div className="border border-border rounded-xl p-5 md:p-6 space-y-4">
-                <p className="eyebrow">{t("projectDetail.techStack")}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider border border-border rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {project.tags && project.tags.length > 0 && (
+                <div className="border border-border rounded-xl p-5 md:p-6 space-y-4">
+                  <p className="eyebrow">{t("projectDetail.techStack")}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider border border-border rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Links */}
               {(project.liveUrl || project.githubUrl) && (
