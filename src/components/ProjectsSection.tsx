@@ -10,6 +10,7 @@ import projectPortal from "@/assets/portal.jpeg";
 import projectPanel from "@/assets/panel.jpeg";
 import projectSludge from "@/assets/sludge monitor.png";
 import projectEsteh from "@/assets/mockup estehjumbo.png";
+import projectBatik from "@/assets/mockup-batik.png";
 
 export interface Project {
   id: string;
@@ -50,6 +51,29 @@ export const projects: Project[] = [
     images: [projectPortal, projectPanel],
     year: "2026",
     category: "Internal Dashboard",
+  },
+  {
+    id: "rumah-batik-bintan",
+    title: "Rumah Batik Bintan",
+    description:
+      "Platform eduwisata membatik & e-commerce kebudayaan Batik Manes Bintan berbasis Laravel 11 dan PostgreSQL (Supabase). Dilengkapi reservasi workshop online, katalog batik tulis kontemporer, dan CMS admin panel terpadu.",
+    fullDescription:
+      "Rumah Batik Bintan adalah platform web eduwisata kebudayaan dan e-commerce batik yang dirancang khusus untuk Sanggar Batik Bintan (dirintis sejak 2019 oleh Bapak Trimajniko/Miko). Aplikasi ini mengintegrasikan pengalaman eduwisata membatik (Batik Experience ±2 Jam), katalog batik tulis kontemporer, sistem reservasi workshop online, galeri kegiatan, agenda event, serta CMS Admin Panel komprehensif untuk mengelola produk, event, FAQ, reservasi, dan pesan kontak. Backend dibangun dengan Laravel 11 dan database PostgreSQL Supabase dengan sistem auto-ping 24/7.",
+    tags: ["Laravel", "PHP", "Bootstrap 5", "PostgreSQL", "Supabase", "Blade"],
+    features: [
+      "Eduwisata Batik Experience - Informasi & pendaftaran kelas membatik interaktif ±2 Jam di Sanggar Ekang Anculai",
+      "Sistem Reservasi Online - Form pemesanan paket eduwisata lengkap dengan manajemen status reservasi",
+      "Showcase & Katalog Batik Manes Bintan - Galeri karya batik tulis kontemporer lengkap dengan detail harga & kategori",
+      "Agenda & Workshop Event - Pengelolaan jadwal kegiatan eduwisata dan pameran membatik",
+      "CMS Admin Panel Terpadu - Management dashboard terproteksi untuk CRUD Produk, Event, FAQ, Reservasi, dan Pesan",
+      "Management Keamanan Admin - Sistem autentikasi, ubah password, dan pemulihan akun via email token",
+      "Auto-Ping Supabase Healthcheck - Endpoint /ping otomatis untuk menjaga performa & koneksi database Supabase 24/7",
+      "Desain Responsif & Modern - Dikembangkan dengan Bootstrap 5, FontAwesome 6, dan Swiper.js untuk tampilan interaktif",
+    ],
+    image: projectBatik,
+    githubUrl: "https://github.com/IkhsanDimas/rumahbatikbintan",
+    year: "2026",
+    category: "Culture & Tourism Web App",
   },
   {
     id: "esteh-jumbo",
